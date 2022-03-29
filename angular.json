@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "intelligentpricing": "apps/intelligentpricing",
-    "intelligentpricing-e2e": "apps/intelligentpricing-e2e"
+    "intelligentpricing-e2e": "apps/intelligentpricing-e2e",
+    "shared": "libs/shared",
+    "shared-e2e": "apps/shared-e2e"
   }
 }
