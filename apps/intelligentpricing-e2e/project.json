@@ -1,0 +1,28 @@
+{
+  "root": "apps/intelligentpricing-e2e",
+  "sourceRoot": "apps/intelligentpricing-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/intelligentpricing-e2e/cypress.json",
+        "devServerTarget": "intelligentpricing:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "intelligentpricing:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/intelligentpricing-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["intelligentpricing"]
+}
