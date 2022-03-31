@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@vfpricing/material": ["libs/material/src/index.ts"],
       "@vfpricing/shared": ["libs/shared/src/index.ts"]
     }
   },
