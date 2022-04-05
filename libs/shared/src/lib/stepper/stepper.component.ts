@@ -1,26 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { StepperConfig } from './stepper.interface';
 
 @Component({
-  selector: 'vf-stepper',
+  selector: 'vfpricing-stepper',
   templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.scss']
+  styleUrls: ['./stepper.component.scss'],
 })
-export class StepperComponent implements OnInit {
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  isEditable = false;
-  constructor(private _formBuilder: FormBuilder) {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
+export class StepperComponent {
+  @Input() stepperConfig: StepperConfig[] = [
+    { label: 'Customer info' },
+    { label: 'Investment & Connections' },
+    { label: 'Configure' },
+    { label: 'Tariff Recommendation' },
+  ];
+
+  @Output() clickEmit = new EventEmitter();
+
+  selectedIndex = 0;
+
+  clicked(item: StepperConfig, index: number): void {
+    this.selectedIndex = index;
+    this.clickEmit.emit(item);
   }
-
-
-  ngOnInit(): void {
-  }
-
 }

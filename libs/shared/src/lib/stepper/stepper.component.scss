@@ -1,5 +1,81 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../../../../themes/variable.scss';
 
-:host {
-  display: block;
+.md-stepper-horizontal {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+
+
+  .md-step {
+    display: table-cell;
+    position: relative;
+    padding: 24px;
+  }
+
+  .md-step:first-child:active,
+  .md-step:last-child:active {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+
+  .md-step:first-child .md-step-bar-left,
+  .md-step:last-child .md-step-bar-right {
+    display: none;
+  }
+
+  .md-step-circle {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: $white-color;
+    border: 2px solid $font-dark-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: $font-dark-1;
+
+    &:hover,
+    &.active {
+      cursor: pointer;
+      color: $white-color;
+      background-color: $font-dark-1;
+    }
+  }
+
+  .md-step-title {
+    text-align: center;
+    font-size: 18px;
+    color: #0D0D0D;
+    line-height: 26px;
+    font-weight: 400;
+  }
+
+
+  .md-step-bar-left,
+  .md-step-bar-right {
+    position: absolute;
+    top: 48px;
+    height: 1px;
+    border-top: 1px solid $font-dark-1;
+  }
+
+  .md-step-bar-right {
+    right: 0;
+    left: 50%;
+    margin-left: 26px;
+  }
+
+  .md-step-bar-left {
+    left: 0;
+    right: 50%;
+    margin-right: 26px;
+  }
 }

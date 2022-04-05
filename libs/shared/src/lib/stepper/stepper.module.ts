@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StepperComponent } from './stepper.component';
-import { MaterialModule } from '@vfpricing/material';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@vfpricing/material';
+
+import { StepperComponent } from './stepper.component';
 
 
 
@@ -16,5 +16,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MaterialModule
   ],
+  exports: [StepperComponent]
 })
 export class StepperModule { }
