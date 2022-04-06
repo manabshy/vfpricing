@@ -15,10 +15,14 @@
         "tsConfig": "apps/intelligentpricing/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/intelligentpricing/src/favicon.ico",
-          "apps/intelligentpricing/src/assets"
+          "apps/intelligentpricing/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/assets/src/assets",
+            "output": "./assets/"
+          }
         ],
-        "styles": ["apps/intelligentpricing/src/styles.scss"],
+        "styles": ["apps/intelligentpricing/src/styles.scss", "libs/themes/global.scss"],
         "scripts": []
       },
       "configurations": {

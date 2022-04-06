@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/assets",
+  "sourceRoot": "libs/assets/src",
+  "prefix": "vfpricing",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/assets/src/test.ts",
+        "tsConfig": "libs/assets/tsconfig.spec.json",
+        "karmaConfig": "libs/assets/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/assets/src/**/*.ts",
+          "libs/assets/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

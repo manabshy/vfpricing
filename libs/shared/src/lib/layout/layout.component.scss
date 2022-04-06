@@ -1,0 +1,29 @@
+@import '../../../../themes/variable.scss';
+
+.header-layout {
+  width: 100%;
+  background: $white-color;
+  height: $header-height;
+  border-bottom: 1px solid $border-color;
+
+  .hamburger {
+    position: absolute;
+    left: 30px;
+    top: 26px;
+  }
+
+  .logo-icon {
+    position: absolute;
+    left: 80px;
+    top: 15px;
+  }
+
+  .center-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 18px;
+    height: 100%;
+  }
+}
