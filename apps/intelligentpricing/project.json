@@ -22,7 +22,10 @@
             "output": "./assets/"
           }
         ],
-        "styles": ["apps/intelligentpricing/src/styles.scss", "libs/themes/global.scss"],
+        "styles": [
+          "node_modules/bootstrap/scss/bootstrap.scss",
+          "apps/intelligentpricing/src/styles.scss",
+          "libs/themes/global.scss"],
         "scripts": []
       },
       "configurations": {

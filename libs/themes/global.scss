@@ -1,4 +1,7 @@
-@import './variable.scss';
+@import './variables.scss';
+@import './badges.scss';
+@import './mat-select.scss';
+@import './sizing.scss';
 
 body {
     margin: 0;
@@ -6,3 +9,72 @@ body {
     background: $background-color;
 }
 
+.row {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+[class*="col-"] {
+    padding: 0;
+}
+
+.btn.btn-primary {
+    padding: 11px 32px;
+    background: #BD0000;
+    border-color: #BD0000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    border-radius: 6px;
+    border-color: unset;
+
+    &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        background: #BEBEBE;
+        border-color: #BEBEBE;
+    }
+}
+
+.disabled {
+    opacity: 0.3;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle {
+    background: #BD0000;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    outline: unset;
+    box-shadow: unset;
+}
+
+.mat-radio-outer-circle {
+    border-color: #7E7E7E;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #0096AD;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #0096AD;
+}
+
+.control-box {
+    border: 1px solid #0D0D0D;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 11px 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    width: 100%;
+}

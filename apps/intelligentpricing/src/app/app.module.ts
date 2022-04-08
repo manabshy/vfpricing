@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from '@vfpricing/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@vfpricing/material';
+import { LayoutModule, StepperModule } from '@vfpricing/shared';
 
+import { SharedModule } from '../shared/shared.module';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LayoutModule, StepperModule } from '@vfpricing/shared';
 
 const LibraryModules = [StepperModule, LayoutModule];
 
@@ -20,6 +21,7 @@ const LibraryModules = [StepperModule, LayoutModule];
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     // lib modules
     LibraryModules,
   ],
