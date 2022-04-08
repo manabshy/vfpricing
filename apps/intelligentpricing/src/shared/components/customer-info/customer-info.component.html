@@ -1,0 +1,87 @@
+<div class="customer-info-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="form">
+                <div class="customer-layout">
+                    <span class="badge bg-dark">Incomplete</span>
+                    <div class="d-flex header-margin flex-column">
+                        <span class="heading-xxl">
+                            Market & Opportunity Type
+                        </span>
+                        <div class="subheading heading-l">
+                            Specify the OpCo & Opportunity Type
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form formGroupName="marketForm">
+                                    <div class="control-wrapper d-flex align-items-center">
+                                        <div class="control-group col-md-3">
+                                            <div class="control-label">
+                                                Market
+                                            </div>
+                                            <div class="control">
+                                                <mat-select formControlName="market">
+                                                    <mat-option value="">Select Market</mat-option>
+                                                    <mat-option *ngFor="let market of markets" [value]="market.value">
+                                                        {{market.label}}</mat-option>
+                                                </mat-select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group col-md-4 ml-5">
+                                            <div class="control-label">
+                                                Oportunity
+                                            </div>
+                                            <div class="control">
+                                                <mat-radio-group formControlName="oportunity">
+                                                    <mat-radio-button class="margin-right-50px" value="0">New
+                                                    </mat-radio-button>
+                                                    <mat-radio-button value="1">Renew</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div [class.disabled]="!form?.get('marketForm')?.valid" class="d-flex header-margin flex-column">
+                        <span class="heading-xxl">
+                            About customer
+                        </span>
+                        <div class="subheading heading-l">
+                            Select at lest one account...
+                        </div>
+                        <div *ngIf="form?.get('marketForm')?.valid" class="row">
+                            <div class="col-md-12">
+                                <form formGroupName="customer"></form>
+                                <div class="control-wrapper d-flex align-items-center">
+                                    <div class="control-group col-md-3">
+                                        <div class="control-label">
+                                            Market
+                                        </div>
+                                        <div class="control position-relative">
+                                            <input type="text" class="control-box" placeholder="Pick one"
+                                                aria-label="Number" matInput formControlName="account"
+                                                [matAutocomplete]="auto">
+                                            <span class="search-box">
+                                                <img src="./assets/icons/search.svg">
+                                            </span>
+                                            <mat-autocomplete #auto="matAutocomplete">
+                                                <mat-option *ngFor="let option of markets" [value]="option">
+                                                    {{option.label}}
+                                                </mat-option>
+                                            </mat-autocomplete>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <input type="button" class="btn btn-primary disabled" value="Save & Next" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
