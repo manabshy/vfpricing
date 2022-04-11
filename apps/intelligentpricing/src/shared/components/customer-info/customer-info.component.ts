@@ -24,17 +24,36 @@ export class CustomerInfoComponent implements OnInit {
     },
   ];
 
+  multiSelect = [
+    { value: 'Loreum 1', checked: false },
+    { value: 'Loreum 2', checked: false },
+    { value: 'Loreum 3', checked: false },
+    { value: 'Loreum 4', checked: false },
+  ];
+  selected: any[] = [];
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
       marketForm: this.fb.group({
-        market: ['1', Validators.required],
-        oportunity: ['1', Validators.required],
+        market: [1, Validators.required],
+        oportunity: ['0', Validators.required],
       }),
       customer: this.fb.group({
         account: [[], Validators.required],
       }),
     });
+  }
+
+  updateAllComplete(value: any) {
+    const hasValue = this.selected.findIndex(
+      (item) => item.value === value.value
+    );
+    if (hasValue >= 0) {
+      this.selected.splice(hasValue, 1);
+    } else {
+      this.selected.push(value);
+    }
   }
 }
