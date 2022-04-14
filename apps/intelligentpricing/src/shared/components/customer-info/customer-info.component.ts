@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReportConfigService } from '@vfpricing/shared';
+import { ReportConfig } from 'libs/shared/src/lib/report-layout/report-layout.component';
+import { CustomerInfoService } from './customer-info.service';
 
 @Component({
   selector: 'vfpricing-customer-info',
@@ -9,71 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CustomerInfoComponent implements OnInit {
   form!: FormGroup;
   isOpen!: boolean;
-  public lineChartData = [
-    { data: [55, 50, 55, 50, 55, 50, 40], label: 'Voice' },
-    { data: [50, 55, 50, 55, 50, 55, 40], label: 'National' },
-    { data: [1, 1, 1, 1, 1, 1, 1], label: 'Roming' },
-    { data: [5, 5, 5, 5, 5, 5, 5], label: 'Roming' },
-  ];
-  public lineChartLabels = ['0', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx'];
-  public lineChartOptions = {
-    scales: {
-      y: {
-        title: {
-          display: true,
-          text: 'Your Title',
-          color: '#00000',
-          padding: 10,
-          font: {
-            size: 16,
-            weight: 700,
-          },
-        },
-      },
-      x: {
-        title: {
-          display: true,
-          text: 'Your Title',
-          color: '#00000',
-          padding: 10,
-          font: {
-            size: 16,
-            weight: 700,
-          },
-        },
-      },
-    },
-    plugins: {
-      title: {
-        display: true,
-        text: 'Voice Trends',
-        color: '#00000',
-        font: {
-          size: 24,
-          weight: 700,
-        },
-      },
-      legend: {
-        position: 'top',
-        align: 'start',
-        labels: {
-          padding: 40,
-          fontSize: 10,
-          usePointStyle: true,
-        },
-      },
-    },
-  } as any;
-
-  public lineChartColors = [
-    {
-      borderColor: 'white',
-      backgroundColor: '#000',
-    },
-  ];
-  public lineChartLegend = true;
-  public lineChartType = 'line';
-
+  
+  voiceTrendData!: any;
+  dataTrend!: any;
   markets = [
     {
       label: 'UK',
@@ -97,7 +38,7 @@ export class CustomerInfoComponent implements OnInit {
   ];
   selected: any[] = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private service: CustomerInfoService) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -109,6 +50,8 @@ export class CustomerInfoComponent implements OnInit {
         account: [[], Validators.required],
       }),
     });
+    this.voiceTrendData = this.service.getVoiceTrendData();
+    this.dataTrend = this.service.getDataTrend();
   }
 
   updateAllComplete(value: any) {

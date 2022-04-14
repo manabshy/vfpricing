@@ -1,0 +1,30 @@
+<div style="display: block;">
+    <canvas baseChart *ngIf="config" [width]="'400'" [height]="'100'" [datasets]="config.graphData.chartData.datasets"
+        [labels]="config.graphData.labels" [options]="config.graphData.options" [legend]="config.graphData.chartLegend"
+        [type]="config.graphData.chartType">
+    </canvas>
+    <div class="table-report w-100">
+        <div class="table-heading">Summary</div>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <th *ngFor="let col of config.tableData?.column">{{col}}</th>
+                </thead>
+                <tbody>
+                    <ng-container>
+                        <tr *ngFor="let row of config.tableData.rowData">
+                            <td *ngFor="let col of config.tableData.column">
+                                <div class="d-flex align-items-center" *ngIf="col === 'change (%)'"> {{row[col]}}
+                                    <img class="status-icons ml-2" *ngIf="row.status === 0" src="./assets/icons/arrow-up-sign.svg">
+                                    <img class="status-icons ml-2" *ngIf="row.status === 1" src="./assets/icons/arrow-down-sign.svg">
+                                    <img class="status-icons ml-2" *ngIf="row.status === 2" src="./assets/icons/minus.svg">
+                                </div>
+                                <div *ngIf="col !== 'change (%)'"> {{row[col]}}</div>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -7,12 +7,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@vfpricing/material';
-import { AlertModule } from '@vfpricing/shared';
-import { NgChartsModule } from 'ng2-charts';
+import { AlertModule, ReportLayoutModule } from '@vfpricing/shared';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
+import { CustomerInfoService } from './components/customer-info/customer-info.service';
 
 const SharedComponent = [CustomerInfoComponent];
 const Modules = [
@@ -20,7 +20,7 @@ const Modules = [
   MatAutocompleteModule,
   MatCheckboxModule,
   AlertModule,
-  NgChartsModule,
+  ReportLayoutModule,
 ];
 
 @NgModule({
@@ -37,5 +37,6 @@ const Modules = [
     Modules,
   ],
   exports: [SharedComponent, Modules, BsDropdownModule, AccordionModule],
+  providers: [CustomerInfoService]
 })
 export class SharedModule {}
