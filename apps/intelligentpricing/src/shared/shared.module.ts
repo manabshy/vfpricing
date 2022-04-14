@@ -1,15 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@vfpricing/material';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AlertModule } from '@vfpricing/shared';
+import { NgChartsModule } from 'ng2-charts';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
 
 const SharedComponent = [CustomerInfoComponent];
 const Modules = [
@@ -17,12 +20,14 @@ const Modules = [
   MatAutocompleteModule,
   MatCheckboxModule,
   AlertModule,
+  NgChartsModule,
 ];
 
 @NgModule({
   declarations: [SharedComponent],
   imports: [
     CommonModule,
+    AccordionModule.forRoot(),
     BsDropdownModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
@@ -31,6 +36,6 @@ const Modules = [
     ReactiveFormsModule,
     Modules,
   ],
-  exports: [SharedComponent, Modules, BsDropdownModule],
+  exports: [SharedComponent, Modules, BsDropdownModule, AccordionModule],
 })
 export class SharedModule {}

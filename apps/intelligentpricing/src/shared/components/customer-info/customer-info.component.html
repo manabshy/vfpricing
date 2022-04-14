@@ -97,7 +97,8 @@
                                         </div>
                                         <div class="control position-relative">
                                             <vfpricing-alert [alertType]="'warning'">
-                                                Some slections may not have full 12 months usage/spend history which can affect accuracy. Please use the
+                                                Some slections may not have full 12 months usage/spend history which can
+                                                affect accuracy. Please use the
                                                 “configure usage” if alternations are required.
                                             </vfpricing-alert>
                                         </div>
@@ -107,6 +108,36 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="customer-layout mt-4">
+                    <accordion [isAnimated]="true">
+                        <accordion-group (isOpenChange)="isOpen = $event">
+                            <div class="justify-content-between d-flex w-100  shadow-none" accordion-heading
+                                type="button">
+                                <div class="pull-left heading-xxl float-left">Current usage</div>
+                                <span class="d-flex align-items-center">
+                                    <img [class.rotate-180]="!isOpen" src="./assets/icons/arrow-up-orange.svg">
+                                </span>
+                            </div>
+                            <accordion-group panelClass="dark">
+                                <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none" accordion-heading
+                                    type="button">
+                                    <div class="pull-left heading-xl float-left">Voice</div>
+                                    <span class="d-flex align-items-center">
+                                        <img [class.rotate-180]="!isOpen" src="./assets/icons/arrow-up.svg">
+                                    </span>
+                                </div>
+                                <div style="display: block;">
+                                    <canvas baseChart width="400" height="100" [datasets]="lineChartData"
+                                        [labels]="lineChartLabels" [options]="lineChartOptions"
+                                        [legend]="lineChartLegend" [type]="'line'">
+                                    </canvas>
+                                </div>
+                            </accordion-group>
+
+                        </accordion-group>
+                    </accordion>
                 </div>
                 <div class="footer">
                     <input type="button" class="btn btn-primary disabled" value="Save & Next" />

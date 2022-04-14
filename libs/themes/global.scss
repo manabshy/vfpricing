@@ -89,3 +89,21 @@ body {
     line-height: 26px;
     width: 100%;
 }
+
+.dark {
+    .card-header.panel-enabled {
+        cursor: pointer;
+        background: #262626;
+        color: #fff;
+    }
+}
+
+.card-header.panel-enabled {
+    cursor: pointer;
+    background: #fff;
+    border: #BEBEBE;
+}
+
+.icon-arrow-up {
+    background-image: url('../assets/src/assets/icons/arrow-up.svg');
+}
