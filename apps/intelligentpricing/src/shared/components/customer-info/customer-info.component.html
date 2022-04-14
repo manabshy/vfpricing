@@ -60,23 +60,124 @@
                                             Market
                                         </div>
                                         <div class="control position-relative">
-                                            <input type="text" class="control-box" placeholder="Pick one"
-                                                aria-label="Number" matInput formControlName="account"
-                                                [matAutocomplete]="auto">
-                                            <span class="search-box">
-                                                <img src="./assets/icons/search.svg">
-                                            </span>
-                                            <mat-autocomplete #auto="matAutocomplete">
-                                                <mat-option *ngFor="let option of markets" [value]="option">
-                                                    {{option.label}}
-                                                </mat-option>
-                                            </mat-autocomplete>
+                                            <div class="btn-group w-100 position-relative d-flex flex-column" dropdown
+                                                #dropdown="bs-dropdown" [insideClick]="true">
+                                                <div dropdownToggle class="control-box">
+                                                    <span class="placeholder" *ngIf="!selected?.length"> Name, Account
+                                                        No,...</span>
+                                                    <span class="selected-value" *ngIf="selected?.length">
+                                                        {{selected?.length}} Account Selected</span>
+                                                </div>
+                                                <span class="search-box">
+                                                    <img src="./assets/icons/search.svg">
+                                                </span>
+                                                <ul id="dropdown-triggers-manual w-100" *dropdownMenu
+                                                    class="dropdown-menu" role="menu"
+                                                    aria-labelledby="button-triggers-manual">
+                                                    <li *ngFor="let data of multiSelect">
+                                                        <mat-checkbox [ngModelOptions]="{standalone: true}"
+                                                            (ngModelChange)="updateAllComplete(data)"
+                                                            [(ngModel)]="data.checked">
+                                                            {{data.value}}
+                                                        </mat-checkbox>
+                                                    </li>
+                                                </ul>
+                                                <div>
+                                                    <div (click)="updateAllComplete(select)"
+                                                        *ngFor="let select of selected" class="selected-chips">
+                                                        {{select.value}}
+                                                        <img role="button" src="./assets/icons/cross.svg" />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="control-group warning-box">
+                                        <div class="control-label">
+                                        </div>
+                                        <div class="control position-relative">
+                                            <vfpricing-alert [alertType]="'warning'">
+                                                Some slections may not have full 12 months usage/spend history which can
+                                                affect accuracy. Please use the
+                                                “configure usage” if alternations are required.
+                                            </vfpricing-alert>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="customer-layout mt-4">
+                    <accordion [isAnimated]="true">
+                        <accordion-group (isOpenChange)="isOpen = $event">
+                            <div class="justify-content-between d-flex w-100  shadow-none" accordion-heading
+                                type="button">
+                                <div class="pull-left heading-xxl float-left">Current usage</div>
+                                <span class="d-flex align-items-center">
+                                    <img [class.rotate-180]="!isOpen" src="./assets/icons/arrow-up-orange.svg">
+                                </span>
+                            </div>
+                            <accordion-group panelClass="dark" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                                <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
+                                    accordion-heading type="button">
+                                    <div class="pull-left heading-xl float-left">Voice</div>
+                                    <span class="d-flex align-items-center">
+                                        <img [class.rotate-180]="!this.voiceTrendData.isOpen"
+                                            src="./assets/icons/arrow-up.svg">
+                                    </span>
+                                </div>
+                                <div style="display: block;">
+                                    <vfpricing-report-layout [config]="this.voiceTrendData"></vfpricing-report-layout>
+                                </div>
+                            </accordion-group>
+
+                            <accordion-group panelClass="dark" (isOpenChange)="this.dataTrend.isOpen = $event">
+                                <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
+                                    accordion-heading type="button">
+                                    <div class="pull-left heading-xl float-left">Data</div>
+                                    <span class="d-flex align-items-center">
+                                        <img [class.rotate-180]="!this.dataTrend.isOpen"
+                                            src="./assets/icons/arrow-up.svg">
+                                    </span>
+                                </div>
+                                <div style="display: block;">
+                                    <vfpricing-report-layout [config]="this.dataTrend"></vfpricing-report-layout>
+                                </div>
+                            </accordion-group>
+
+                            <accordion-group panelClass="dark" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                                <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
+                                    accordion-heading type="button">
+                                    <div class="pull-left heading-xl float-left">CTNs</div>
+                                    <span class="d-flex align-items-center">
+                                        <img [class.rotate-180]="!this.voiceTrendData.isOpen"
+                                            src="./assets/icons/arrow-up.svg">
+                                    </span>
+                                </div>
+                                <div style="display: block;">
+                                    <vfpricing-report-layout [config]="this.voiceTrendData"></vfpricing-report-layout>
+                                </div>
+                            </accordion-group>
+
+
+                            <accordion-group panelClass="dark" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                                <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
+                                    accordion-heading type="button">
+                                    <div class="pull-left heading-xl float-left">Spend</div>
+                                    <span class="d-flex align-items-center">
+                                        <img [class.rotate-180]="!this.voiceTrendData.isOpen"
+                                            src="./assets/icons/arrow-up.svg">
+                                    </span>
+                                </div>
+                                <div style="display: block;">
+                                    <vfpricing-report-layout [config]="this.voiceTrendData"></vfpricing-report-layout>
+                                </div>
+                            </accordion-group>
+                        </accordion-group>
+                    </accordion>
                 </div>
                 <div class="footer">
                     <input type="button" class="btn btn-primary disabled" value="Save & Next" />

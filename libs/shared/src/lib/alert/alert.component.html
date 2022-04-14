@@ -1,0 +1,19 @@
+<div role="button" (click)="isVisible = true" class="alert-wrapper align-items-center" [class.d-none]="isVisible"
+  [class.d-flex]="!isVisible">
+  <img [class]="'icon-'+alertType" [src]="'./assets/icons/'+alertType+'-color.svg'">
+  <span class="alert-text">{{alertType}}...</span>
+</div>
+<div [class]="alertType" [class.d-none]="!isVisible" [class.d-flex]="isVisible">
+  <div [class]="'icon-box-' + alertType">
+    <img [class]="'icon-'+alertType" [src]="'./assets/icons/'+alertType+'.svg'">
+  </div>
+  <div class="alert-message-box">
+    <div class="alert-header">
+      <span class="alertBox">{{alertType}}</span>
+      <img role="button" (click)="isVisible = false" src="./assets/icons/cross.svg">
+    </div>
+    <div class="alert-message">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

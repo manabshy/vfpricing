@@ -1,0 +1,56 @@
+@import '../../../../themes/variables.scss';
+
+.warning {
+  width: 455px;
+  border: 1px solid $warning-color;
+  display: flex;
+  border-radius: 6px;
+}
+
+.icon-box-warning {
+  width: 50%;
+  background: $warning-color;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.alert-message-box {
+  padding: 20px;
+}
+
+.alertBox {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: $font-dark-1;
+}
+
+.alert-message {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: $font-dark-1;
+  margin-top: 10px;
+}
+
+.icon-warning {
+  height: 24px;
+}
+
+.alert-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.alert-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: $font-color2;
+  text-transform: capitalize;
+  padding-left: 10px;
+  cursor: pointer;
+}
