@@ -120,7 +120,7 @@
                                     <img [class.rotate-180]="!isOpen" src="./assets/icons/arrow-up-orange.svg">
                                 </span>
                             </div>
-                            <accordion-group panelClass="dark" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                            <accordion-group panelClass="dark mb-4" (isOpenChange)="this.voiceTrendData.isOpen = $event">
                                 <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Voice</div>
@@ -134,7 +134,7 @@
                                 </div>
                             </accordion-group>
 
-                            <accordion-group panelClass="dark" (isOpenChange)="this.dataTrend.isOpen = $event">
+                            <accordion-group panelClass="dark mb-4" (isOpenChange)="this.dataTrend.isOpen = $event">
                                 <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Data</div>
@@ -148,32 +148,31 @@
                                 </div>
                             </accordion-group>
 
-                            <accordion-group panelClass="dark" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                            <accordion-group panelClass="dark mb-4" (isOpenChange)="this.ctnTrend.isOpen = $event">
                                 <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">CTNs</div>
                                     <span class="d-flex align-items-center">
-                                        <img [class.rotate-180]="!this.voiceTrendData.isOpen"
+                                        <img [class.rotate-180]="!this.ctnTrend.isOpen"
                                             src="./assets/icons/arrow-up.svg">
                                     </span>
                                 </div>
                                 <div style="display: block;">
-                                    <vfpricing-report-layout [config]="this.voiceTrendData"></vfpricing-report-layout>
+                                    <vfpricing-report-layout [config]="this.ctnTrend"></vfpricing-report-layout>
                                 </div>
                             </accordion-group>
 
-
-                            <accordion-group panelClass="dark" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                            <accordion-group panelClass="dark mb-4" (isOpenChange)="this.spendTrend.isOpen = $event">
                                 <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Spend</div>
                                     <span class="d-flex align-items-center">
-                                        <img [class.rotate-180]="!this.voiceTrendData.isOpen"
+                                        <img [class.rotate-180]="!this.spendTrend.isOpen"
                                             src="./assets/icons/arrow-up.svg">
                                     </span>
                                 </div>
                                 <div style="display: block;">
-                                    <vfpricing-report-layout [config]="this.voiceTrendData"></vfpricing-report-layout>
+                                    <vfpricing-report-layout [config]="this.spendTrend"></vfpricing-report-layout>
                                 </div>
                             </accordion-group>
                         </accordion-group>

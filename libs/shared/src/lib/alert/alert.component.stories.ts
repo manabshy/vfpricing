@@ -1,19 +1,23 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import { StepperComponent } from './stepper.component';
+import { AlertComponent } from './alert.component';
 
 export default {
-  title: 'StepperComponent',
-  component: StepperComponent,
+  title: 'AlertComponent',
+  component: AlertComponent,
   decorators: [
     moduleMetadata({
       imports: [FormsModule, ReactiveFormsModule],
     })
   ],
-} as Meta<StepperComponent>;
+} as Meta<AlertComponent>;
 
-const Template: Story<StepperComponent> = (args: StepperComponent) => ({
+const Template: Story<AlertComponent> = (args: AlertComponent) => ({
   props: args,
+  template: `
+  <vfpricing-alert [alertType]="'warning'">
+    Some Warning Message here
+  </vfpricing-alert>`,
 });
 
 

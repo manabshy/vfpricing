@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReportConfigService } from '@vfpricing/shared';
-import { ReportConfig } from 'libs/shared/src/lib/report-layout/report-layout.component';
+
 import { CustomerInfoService } from './customer-info.service';
 
 @Component({
@@ -15,6 +14,8 @@ export class CustomerInfoComponent implements OnInit {
   
   voiceTrendData!: any;
   dataTrend!: any;
+  ctnTrend!: any;
+  spendTrend!: any;
   markets = [
     {
       label: 'UK',
@@ -41,6 +42,14 @@ export class CustomerInfoComponent implements OnInit {
   constructor(private fb: FormBuilder, private service: CustomerInfoService) {}
 
   ngOnInit(): void {
+    this.initForm();
+    this.voiceTrendData = this.service.getVoiceTrendData();
+    this.dataTrend = this.service.getDataTrend();
+    this.ctnTrend = this.service.getDataTrend();
+    this.spendTrend = this.service.getDataTrend();
+  }
+
+  initForm(): void {
     this.form = this.fb.group({
       marketForm: this.fb.group({
         market: [1, Validators.required],
@@ -50,8 +59,6 @@ export class CustomerInfoComponent implements OnInit {
         account: [[], Validators.required],
       }),
     });
-    this.voiceTrendData = this.service.getVoiceTrendData();
-    this.dataTrend = this.service.getDataTrend();
   }
 
   updateAllComplete(value: any) {

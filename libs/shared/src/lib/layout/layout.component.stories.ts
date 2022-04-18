@@ -1,22 +1,23 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import { StepperComponent } from './stepper.component';
-
+import { LayoutComponent } from './layout.component';
 export default {
-  title: 'StepperComponent',
-  component: StepperComponent,
+  title: 'LayoutComponent',
+  staticDirs: ['../../../../assets/src/assets'],
+  component: LayoutComponent,
   decorators: [
     moduleMetadata({
       imports: [FormsModule, ReactiveFormsModule],
-    })
+    }),
   ],
-} as Meta<StepperComponent>;
+} as Meta<LayoutComponent>;
 
-const Template: Story<StepperComponent> = (args: StepperComponent) => ({
-  props: args,
+const Template: Story<LayoutComponent> = (args: LayoutComponent) => ({
+  props: {...args},
 });
 
+export const Defualt = Template.bind({});
 
-export const Primary = Template.bind({});
-Primary.args = {
-}
+Defualt.args = {
+
+};

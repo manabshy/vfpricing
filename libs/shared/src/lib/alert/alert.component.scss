@@ -1,18 +1,17 @@
 @import '../../../../themes/variables.scss';
 
 .warning {
-  width: 455px;
   border: 1px solid $warning-color;
   display: flex;
   border-radius: 6px;
 }
 
 .icon-box-warning {
-  width: 50%;
   background: $warning-color;
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  height: 100%;
 }
 
 .alert-message-box {

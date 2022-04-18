@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'intelligentpricing';
+
+  stepper =  [
+    { label: 'Customer info', step: 0, checked: true },
+    { label: 'Investment & Connections', step: 1 },
+    { label: 'Configure' , step: 3 },
+    { label: 'Tariff Recommendation', step: 4},
+  ];
 }

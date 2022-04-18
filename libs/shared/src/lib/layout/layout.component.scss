@@ -5,7 +5,7 @@
   background: $white-color;
   height: $header-height;
   border-bottom: 1px solid $border-color;
-
+  position: relative;
   .hamburger {
     position: absolute;
     left: 30px;
