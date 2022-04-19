@@ -1,7 +1,14 @@
 <div class="md-stepper-horizontal">
   <ng-container *ngFor="let item of stepperConfig;let i =index">
     <div (click)="clicked(item, i)" class="md-step" [class.click-able]="!item.disabled">
-      <div class="md-step-circle"  [class.active]="selectedIndex === i"><span>{{i + 1}}</span></div>
+      <div class="md-step-circle" [class.active]="(selectedIndex === i || (item.checked && selectedIndex !== i))"><span
+          [hidden]="!(!item.checked || (item.checked && selectedIndex === i))">{{i + 1}}</span>
+        <span class="checkbox-span" *ngIf="item.checked && selectedIndex !== i">
+          <div class="d-flex position-relative">
+            <img class="checkbox-img" src="./assets/icons/check.svg">
+          </div>
+        </span>
+      </div>
       <div class="md-step-title" *ngIf="!item.label">Step {{i + 1}}</div>
       <div class="md-step-title" *ngIf="item.label">{{item.label}}</div>
       <div class="md-step-bar-left"></div>

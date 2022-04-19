@@ -1,10 +1,11 @@
 <vfpricing-layout>
     <div class="layout">
         <div class="stepper-wrapper">
-            <vfpricing-stepper></vfpricing-stepper>   
+            <vfpricing-stepper [stepperConfig]="stepper" (clickEmit)="setStep($event)"></vfpricing-stepper>   
         </div>
-        <div class="stepper-panel">
-            <vfpricing-customer-info></vfpricing-customer-info>
+        <div class="stepper-panel" [ngSwitch]="selectedStep">
+            <vfpricing-customer-info *ngSwitchCase="0"></vfpricing-customer-info>
+            <vfpricing-investment *ngSwitchCase="1"></vfpricing-investment>
         </div>
     </div>
 </vfpricing-layout>

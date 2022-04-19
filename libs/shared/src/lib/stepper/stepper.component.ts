@@ -7,14 +7,9 @@ import { StepperConfig } from './stepper.interface';
   styleUrls: ['./stepper.component.scss'],
 })
 export class StepperComponent {
-  @Input() stepperConfig: StepperConfig[] = [
-    { label: 'Customer info' },
-    { label: 'Investment & Connections' },
-    { label: 'Configure' },
-    { label: 'Tariff Recommendation' },
-  ];
+  @Input() stepperConfig!: StepperConfig[];
 
-  @Output() clickEmit = new EventEmitter();
+  @Output() clickEmit = new EventEmitter<any>();
 
   selectedIndex = 0;
 

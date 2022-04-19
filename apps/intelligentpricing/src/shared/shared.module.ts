@@ -13,8 +13,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
 import { CustomerInfoService } from './components/customer-info/customer-info.service';
+import { InvestmentComponent } from './components/investment/investment.component';
 
-const SharedComponent = [CustomerInfoComponent];
+const SharedComponent = [CustomerInfoComponent, InvestmentComponent];
 const Modules = [
   MatRadioModule,
   MatAutocompleteModule,
