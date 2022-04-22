@@ -4,11 +4,11 @@
             <div class="customer-layout">
                 <span class="badge bg-success">Complete</span>
                 <div class="d-flex header-margin flex-column">
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex justify-content-between">
                         <span class="heading-xxl">
                             Investment
-                         </span>
-                         <div class="d-flex flex-column price-box">
+                        </span>
+                        <div class="d-flex flex-column price-box">
                             <span class="small-text">
                                 Existing spend
                             </span>
@@ -18,11 +18,74 @@
                             <span class="small-text">
                                 Per month
                             </span>
-                         </div>
+                        </div>
+                    </div>
+                    <div class="subheading heading-l mb-5">
+                        Quote will use the latest market price and include discounts. Indicate any customer investment
+                        required.
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            
+                        <div class="col-md-12 d-flex">
+                            <div class="col-md-3 mr-4">
+                                <div class="text-with-control-bg">
+                                    <div class="text-with-multi-select">
+                                        <div class="d-flex flex-column w-100">
+                                            <span class="control-label">
+                                                Device investment
+                                            </span>
+                                            <input type="text" class="control-box" />
+                                            <span class="help-text">
+                                                Sed cursus sem ullamcorpe : + £ xxx.xx
+                                            </span>
+                                        </div>
+                                        <div class="checkbox-group">
+                                            <div class="control-label">
+                                                &nbsp;
+                                            </div>
+                                            <div class="control">
+                                                <mat-radio-group >
+                                                    <mat-radio-button class="margin-right-50px" value="0">New
+                                                    </mat-radio-button>
+                                                    <mat-radio-button value="1">Renew</mat-radio-button>
+                                                </mat-radio-group>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mr-4">
+                                <div class="control-label">
+                                    Invoice Credit
+                                </div>
+                                <input type="text" placeholder="£ 0.00" class="control-box" />
+                            </div>
+                            <div class="col-md-3">
+                                <div class="control-label">
+                                    Coverage
+                                </div>
+                                <input type="text" placeholder="£ 0.00" class="control-box" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12 d-flex">
+                            <div class="text-with-control-bg w-100 d-flex align-items-center">
+                                <div class="col-md-2">
+                                    <div class="control-group">
+                                        <div class="control-label">
+                                            Contract length
+                                        </div>
+                                        <div class="control">
+                                            <mat-select [(ngModel)]="selectedContract">
+                                                <mat-option value=''>Select Contract length</mat-option>
+                                                <mat-option *ngFor="let contract of contractLength" [value]="contract.value">
+                                                    {{contract.label}}</mat-option>
+                                            </mat-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
