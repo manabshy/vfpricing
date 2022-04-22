@@ -16,6 +16,7 @@
     .header-margin {
         margin-top: 72px;
         margin-left: 60px;
+        margin-right: 60px;
     }
 
 
@@ -26,5 +27,58 @@
         border-radius: 8px;
         align-items: center;
         justify-content: center;
+    }
+
+    .small-text {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .big-text {
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .text-with-control-bg {
+        background-color: #F2F2F2;
+        padding: 10px 24px;
+    }
+
+    .text-with-multi-select {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .control {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    mat-radio-group.mat-radio-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .help-text {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0px;
+        margin-top: 14px;
+    }
+
+    .checkbox-group{
+        margin-left: 34px;
+    }
+
+    .col-md-3 {
+        flex: 0 0 32.33%;
+        max-width: 32.33%;
     }
 }
