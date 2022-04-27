@@ -8,7 +8,7 @@ import { StepperConfig } from '@vfpricing/shared';
 })
 export class AppComponent {
   title = 'intelligentpricing';
-  selectedStep = 0;
+  selectedStep = 2;
   stepper: StepperConfig[] =  [
     { label: 'Customer info', step: 0, checked: true },
     { label: 'Investment & Connections', step: 1 },

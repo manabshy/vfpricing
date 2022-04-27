@@ -1,7 +1,7 @@
 <div class="customer-info-wrapper">
     <div class="row">
         <div class="col-12">
-            <div class="customer-layout">
+            <div class="vf-card-body">
                 <span class="badge bg-success">Complete</span>
                 <div class="d-flex header-margin flex-column">
                     <div class="d-flex justify-content-between">
@@ -43,7 +43,7 @@
                                                 &nbsp;
                                             </div>
                                             <div class="control">
-                                                <mat-radio-group >
+                                                <mat-radio-group>
                                                     <mat-radio-button class="margin-right-50px" value="0">New
                                                     </mat-radio-button>
                                                     <mat-radio-button value="1">Renew</mat-radio-button>
@@ -79,7 +79,8 @@
                                         <div class="control">
                                             <mat-select [(ngModel)]="selectedContract">
                                                 <mat-option value=''>Select Contract length</mat-option>
-                                                <mat-option *ngFor="let contract of contractLength" [value]="contract.value">
+                                                <mat-option *ngFor="let contract of contractLength"
+                                                    [value]="contract.value">
                                                     {{contract.label}}</mat-option>
                                             </mat-select>
                                         </div>
@@ -91,5 +92,74 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="customer-info-wrapper mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="vf-card-body">
+                <span class="badge bg-success">Complete</span>
+                <div class="d-flex header-margin flex-column">
+                    <div class="d-flex justify-content-between ">
+                        <div class="d-flex flex-column">
+                            <span class="heading-xxl">
+                                Connections
+                           
+                            </span>
+                            <div class="subheading-connection heading-l">
+                                Your quote will be based on the existing connections, plus the new connections that you add.
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column mb-5">
+                            <div style="display: block;">
+                                <canvas baseChart  [data]="lineChartData"
+                                    [options]="lineChartOptions" [type]="lineChartType"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-report w-100">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <th>Connection Type</th>
+                                    <th>Total existing connections</th>
+                                    <th>Existing inactive users</th>
+                                    <th>New connections required</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Voice & Data</td>
+                                        <td>xxxx</td>
+                                        <td><input type="text" placeholder="xxx" class="control-box w-25" /></td>
+                                        <td><input type="text" placeholder="xxx" class="control-box w-25" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Voice only</td>
+                                        <td>xxxx</td>
+                                        <td><input type="text" placeholder="xxx" class="control-box w-25" /></td>
+                                        <td><input type="text" placeholder="xxx" class="control-box w-25" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Data only</td>
+                                        <td>xxxx</td>
+                                        <td><input type="text" placeholder="xxx" class="control-box w-25" /></td>
+                                        <td><input type="text" placeholder="xxx" class="control-box w-25" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer justify-content-between">
+        <input type="button" class="btn btn-link" value="Previous" />
+        <input type="button" class="btn btn-primary" value="Save & Next" />
     </div>
 </div>

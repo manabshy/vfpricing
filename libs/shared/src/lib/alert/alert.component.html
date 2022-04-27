@@ -1,9 +1,9 @@
-<div role="button" (click)="isVisible = true" class="alert-wrapper align-items-center" [class.d-none]="isVisible"
+<div role="button" (click)="isVisible = true" class="alert-wrapper align-items-center" [class.d-none]="isVisible && clickEnable"
   [class.d-flex]="!isVisible">
   <img [class]="'icon-'+alertType" [src]="'./assets/icons/'+alertType+'-color.svg'">
-  <span class="alert-text">{{alertType}}...</span>
+  <span class="alert-text">{{title || alertType}}...</span>
 </div>
-<div class="row">
+<div class="row" *ngIf="clickEnable">
   <div class="col-md-5">
     <div [class]="alertType" [class.d-none]="!isVisible" [class.d-flex]="isVisible">
       <div class="col-md-2">
