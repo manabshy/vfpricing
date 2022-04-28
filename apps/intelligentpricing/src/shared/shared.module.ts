@@ -11,6 +11,7 @@ import { AlertModule, ReportLayoutModule } from '@vfpricing/shared';
 import { NgChartsModule } from 'ng2-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
 import { CustomerInfoService } from './components/customer-info/customer-info.service';
@@ -26,6 +27,7 @@ const Modules = [
   NgChartsModule,
   ReportLayoutModule,
   NgChartsModule,
+  TabsModule,
 ];
 
 @NgModule({
