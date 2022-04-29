@@ -3,11 +3,15 @@
 @import './badges.scss';
 @import './mat-select.scss';
 @import './sizing.scss';
+@import './tabs.scss';
+@import './fonts.scss';
+
 
 body {
     margin: 0;
     height: 100vh;
     background: $background-color;
+    font-family: 'vodafone-rg-regular';
 }
 
 .row {
@@ -20,10 +24,30 @@ body {
     padding: 0;
 }
 
+.btn.btn-link {
+    padding: 11px 32px;
+    border: 2px solid $primary-red;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    border-radius: 6px;
+    border-color: unset;
+    color: $primary-red;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+
+    &:hover {
+        color: $white-color;
+        background: $primary-red;
+        border-color: unset;
+        text-decoration: none;
+    }
+}
+
 .btn.btn-primary {
     padding: 11px 32px;
     background: $primary-red;
-    border-color: $primary-red;
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;
@@ -59,14 +83,15 @@ body {
 }
 
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: $primary-blue;;
+    border-color: $primary-blue;
+    ;
 }
 
 .mat-radio-button.mat-accent .mat-radio-inner-circle,
 .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
 .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
-    background-color: $primary-blue;;
+    background-color: $primary-blue;
 }
 
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
@@ -112,3 +137,20 @@ body {
 .icon-arrow-up {
     background-image: url('../assets/src/assets/icons/arrow-up.svg');
 }
+
+.footer {
+    padding: 56px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.vf-card-body {
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin: 0 35px;
+    background-color: $white-color;
+    padding: 24px 40px;
+}
+

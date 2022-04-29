@@ -8,20 +8,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@vfpricing/material';
 import { AlertModule, ReportLayoutModule } from '@vfpricing/shared';
+import { NgChartsModule } from 'ng2-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
 import { CustomerInfoService } from './components/customer-info/customer-info.service';
 import { InvestmentComponent } from './components/investment/investment.component';
+import { ConfigureComponent } from './components/configure/configure.component';
 
-const SharedComponent = [CustomerInfoComponent, InvestmentComponent];
+const SharedComponent = [CustomerInfoComponent, InvestmentComponent, ConfigureComponent] ;
 const Modules = [
   MatRadioModule,
   MatAutocompleteModule,
   MatCheckboxModule,
   AlertModule,
+  NgChartsModule,
   ReportLayoutModule,
+  NgChartsModule,
+  TabsModule,
 ];
 
 @NgModule({
