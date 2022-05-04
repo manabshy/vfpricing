@@ -89,115 +89,38 @@ input:checked+.slider:before {
   margin-bottom: 61px;
 }
 
-.chart-panel {
-  display: block;
-  background: #fff;
-  position: relative;
-  padding: 0 30px;
-  width: 30%;
+.subheading {
+  margin: 40px 0;
+}
 
-  .heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* font-family: Vodafone Rg; */
+// vfpricing-chart-panel {
+//   width: 100%;
+// }
+
+.col-4 {
+  max-width: 30%;
+  flex: 0 0 30%;
+}
+
+.final-tariff {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 18px;
+
+  .text-tariff {
+    font-weight: 400;
     font-size: 24px;
-    font-weight: 700;
-    line-height: 26px;
-    letter-spacing: 0px;
-    text-align: center;
-    padding: 14px;
+    line-height: 48px;
+    color: #0D0D0D;
   }
 
-  img.open-icon {
-    position: absolute;
-    right: 12px;
-    top: 10px;
-  }
-
-  .labels-wrapper {
+  .control {
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-
-  .actual {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0px;
-    text-align: left;
-  }
-
-  .forecast {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0px;
-    text-align: left;
-  }
-
-  .chat-data {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  span.actual-dot {
-    background: rebeccapurple;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    display: block;
-    background: #E60000;
-  }
-
-  span.forecast-dot {
-    display: block;
-    background: #0096AD;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-  }
-
-  .left-side {
-    background: #BD0000;
-    border-radius: 4px 0px 0px 4px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 3px 10px;
-  }
-
-  .right-side {
-    background: #0096AD;
-    border-radius: 0px 4px 4px 0px;
-    color: #fff;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 3px 10px;
-  }
-
-  .lbl-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 400;
-    font-size: 8px;
-  }
-
-  span.minutes-data {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  span.minutes-lbl {
-    margin-left: 4px;
+    justify-content: flex-start;
+    margin-top: 8px;
   }
 }

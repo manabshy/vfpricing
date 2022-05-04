@@ -7,7 +7,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@vfpricing/material';
-import { AlertModule, ReportLayoutModule } from '@vfpricing/shared';
+import { AlertModule, ChartPanelModule, ReportLayoutModule } from '@vfpricing/shared';
 import { NgChartsModule } from 'ng2-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -17,6 +17,7 @@ import { CustomerInfoComponent } from './components/customer-info/customer-info.
 import { CustomerInfoService } from './components/customer-info/customer-info.service';
 import { InvestmentComponent } from './components/investment/investment.component';
 import { ConfigureComponent } from './components/configure/configure.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const SharedComponent = [CustomerInfoComponent, InvestmentComponent, ConfigureComponent] ;
 const Modules = [
@@ -28,6 +29,8 @@ const Modules = [
   ReportLayoutModule,
   NgChartsModule,
   TabsModule,
+  ChartPanelModule,
+  // VfModalModule,
 ];
 
 @NgModule({
@@ -35,6 +38,7 @@ const Modules = [
   imports: [
     CommonModule,
     AccordionModule.forRoot(),
+    ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,7 +47,7 @@ const Modules = [
     ReactiveFormsModule,
     Modules,
   ],
-  exports: [SharedComponent, Modules, BsDropdownModule, AccordionModule],
+  exports: [SharedComponent, Modules, BsDropdownModule, AccordionModule, ModalModule],
   providers: [CustomerInfoService]
 })
 export class SharedModule {}

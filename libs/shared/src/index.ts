@@ -6,3 +6,5 @@ export * from './lib/alert/alert.module';
 export * from './lib/report-layout/report-layout.module';
 export * from './lib/report-layout/report-config.service';
 export * from './lib/report-layout/report-layout.interface';
+export * from './lib/chart-panel/chart-panel.module';
+export * from './lib/modal/modal.module';

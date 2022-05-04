@@ -33,129 +33,169 @@
                                                 <div class="panel-heading">
                                                     Voice Usage for the last 12 months.
                                                 </div>
-                                                <div class="graph-wrapper d-flex align-items-center justify-content-between">
-                                                    <div class="chart-panel">
-                                                        <div class="heading">National</div>
-                                                        <img src="./assets/icons/open.svg" class="open-icon" />
-                                                        <div class="labels-wrapper">
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-center">
-                                                                <span class="actual-dot mr-1"></span>
-                                                                <span class="actual">Actual</span>
-                                                            </div>
-                                                            <div
-                                                                class="d-flex align-items-center ml-3 justify-content-center">
-                                                                <span class="forecast-dot mr-1"></span>
-                                                                <span class="forecast">Forecast</span>
-                                                            </div>
+                                                <div
+                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
+                                                    <div class="row d-flex align-items-center justify-content-between">
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
                                                         </div>
-                                                        <canvas baseChart [data]="lineChartData"
-                                                            [options]="lineChartOptions"
-                                                            [type]="lineChartType"></canvas>
-                                                        <div class="chat-data">
-                                                            <div class="left-side">
-                                                                <div class="lbl-heading">Actual</div>
-                                                                <div class="lbl-data">
-                                                                    <span class="minutes-data">XXXX</span>
-                                                                    <span class="minutes-lbl">mins</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-side">
-                                                                <div class="lbl-heading">Forecast</div>
-                                                                <div class="lbl-data">
-                                                                    <span class="minutes-data">XXXX</span>
-                                                                    <span class="minutes-lbl">mins</span>
-                                                                </div>
-                                                            </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
                                                         </div>
-                                                        <span class="edit-section" role="button">Edit</span>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                        </div>
                                                     </div>
-                                                    <div class="chart-panel">
-                                                        <div class="heading">National</div>
-                                                        <img src="./assets/icons/open.svg" class="open-icon" />
-                                                        <div class="labels-wrapper">
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-center">
-                                                                <span class="actual-dot mr-1"></span>
-                                                                <span class="actual">Actual</span>
-                                                            </div>
-                                                            <div
-                                                                class="d-flex align-items-center ml-3 justify-content-center">
-                                                                <span class="forecast-dot mr-1"></span>
-                                                                <span class="forecast">Forecast</span>
-                                                            </div>
-                                                        </div>
-                                                        <canvas baseChart [data]="lineChartData"
-                                                            [options]="lineChartOptions"
-                                                            [type]="lineChartType"></canvas>
-                                                        <div class="chat-data">
-                                                            <div class="left-side">
-                                                                <div class="lbl-heading">Actual</div>
-                                                                <div class="lbl-data">
-                                                                    <span class="minutes-data">XXXX</span>
-                                                                    <span class="minutes-lbl">mins</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-side">
-                                                                <div class="lbl-heading">Forecast</div>
-                                                                <div class="lbl-data">
-                                                                    <span class="minutes-data">XXXX</span>
-                                                                    <span class="minutes-lbl">mins</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <span class="edit-section" role="button">Edit</span>
+                                                </div>
+                                                <div class="final-tariff">
+                                                    <div class="text-tariff">
+                                                        Apply the above usage adjustments for the final tariff recommendation?
+
                                                     </div>
-                                                    <div class="chart-panel">
-                                                        <div class="heading">National</div>
-                                                        <img src="./assets/icons/open.svg" class="open-icon" />
-                                                        <div class="labels-wrapper">
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-center">
-                                                                <span class="actual-dot mr-1"></span>
-                                                                <span class="actual">Actual</span>
-                                                            </div>
-                                                            <div
-                                                                class="d-flex align-items-center ml-3 justify-content-center">
-                                                                <span class="forecast-dot mr-1"></span>
-                                                                <span class="forecast">Forecast</span>
-                                                            </div>
-                                                        </div>
-                                                        <canvas baseChart [data]="lineChartData"
-                                                            [options]="lineChartOptions"
-                                                            [type]="lineChartType"></canvas>
-                                                        <div class="chat-data">
-                                                            <div class="left-side">
-                                                                <div class="lbl-heading">Actual</div>
-                                                                <div class="lbl-data">
-                                                                    <span class="minutes-data">XXXX</span>
-                                                                    <span class="minutes-lbl">mins</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="right-side">
-                                                                <div class="lbl-heading">Forecast</div>
-                                                                <div class="lbl-data">
-                                                                    <span class="minutes-data">XXXX</span>
-                                                                    <span class="minutes-lbl">mins</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <span class="edit-section" role="button">Edit</span>
+                                                    <div class="control d-flex align-items-center justify-content-start">
+                                                        <mat-radio-group>
+                                                            <mat-radio-button class="margin-right-50px" value="0">Yes
+                                                            </mat-radio-button>
+                                                            <mat-radio-button value="1">No</mat-radio-button>
+                                                        </mat-radio-group>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </tab>
-                                        <tab heading="SMS">Basic content 1</tab>
-                                        <tab heading="MMS">Basic content 2</tab>
-                                        <tab heading="Data">Basic content 2</tab>
-                                        <tab heading="Roaming">Basic content 2</tab>
+                                        <tab heading="SMS">
+                                            <div class="panel">
+                                                <div class="panel-heading">
+                                                    SMS Usage for the last 12 months.
+                                                </div>
+                                                <div
+                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
+                                                    <div class="row d-flex align-items-center justify-content-between">
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel ></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </tab>
+                                        <tab heading="MMS">
+                                            <div class="panel">
+                                                <div class="panel-heading">
+                                                    MMS Usage for the last 12 months.
+                                                </div>
+                                                <div
+                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
+                                                    <div class="row d-flex align-items-center justify-content-between">
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </tab>
+                                        <tab heading="Data">
+                                            <div class="panel">
+                                                <div class="panel-heading">
+                                                    Data Usage for the last 12 months.
+                                                </div>
+                                                <div
+                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
+                                                    <div class="row d-flex align-items-center justify-content-between">
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </tab>
+                                        <tab heading="Roaming">
+                                            <div class="panel">
+                                                <div class="panel-heading">
+                                                    Roaming Usage for the last 12 months.
+                                                </div>
+                                                <div
+                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
+                                                    <div class="row d-flex align-items-center justify-content-between">
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
+                                                        </div>
+                                                        <div class="col-4 mb-3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </tab>
                                     </tabset>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="footer justify-content-between">
+                <input type="button" class="btn btn-link" value="Previous" />
+                <input type="button" class="btn btn-primary" value="Save & Next" />
             </div>
         </div>
     </div>
