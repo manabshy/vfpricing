@@ -6,8 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  @Input() alertType!: 'warning' | 'info';
+  @Input() alertType!: 'warning' | 'info' | 'question';
   @Input() isVisible!: boolean;
   @Input() title!: string;
   @Input() clickEnable = true;
+  @Input() hasDangerText = false;
 }

@@ -1,0 +1,41 @@
+.table-heading {
+    background: #262626;
+    display: flex;
+    padding: 16px 30px;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 34px;
+}
+
+.table-wrapper {
+    margin: 0 30px;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    th {
+        border: unset !important
+    }
+
+    td {
+        border-top: 2px solid #4A4D4E;
+        border-bottom: 2px solid #4A4D4E;
+    }
+
+}
+
+.table-panel {
+    background: #F2F2F2;
+}
+
+.alert-tarrif {
+    margin: 0 30px;
+    margin-bottom: 36px;
+}
+
+.btn-box {
+    margin-right: 40px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
