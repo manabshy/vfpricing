@@ -1,0 +1,99 @@
+<div class="customer-info-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <div class="vf-card-body">
+                <div class="d-flex header-margin flex-column">
+                    <div class="d-flex justify-content-between">
+                        <span class="heading-xxl">
+                            Tariff recommendation
+                                                </span>
+                    </div>
+                    <div class="subheading heading-l mt-5 mb-4">
+                        Based on “Energy & Utilities” usage average and your configurations, the following tariffs recommended...
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 d-flex flex-column table-panel">
+                            <div class="table-heading">
+                                Summary
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <th>Type</th>
+                                        <th>No. of Connections</th>
+                                        <th>Contract Length</th>
+                                        <th>Expected Usage</th>
+                                        <th>Annual Growth (%)</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let summary of summaryData">
+                                            <td>{{summary.type}}</td>
+                                            <td>{{summary.connectionCount}}</td>
+                                            <td>{{summary.contractLenght}}</td>
+                                            <td>{{summary.usage}}</td>
+                                            <td>{{summary.growth}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-12 d-flex flex-column table-panel">
+                            <div class="table-heading">
+                                Recommendation
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <th>
+                                            <mat-checkbox></mat-checkbox>
+                                        </th>
+                                        <th>Tariff</th>
+                                        <th>TCV</th>
+                                        <th>Device Investment</th>
+                                        <th>Invoice Credit</th>
+                                        <th>Net Value</th>
+                                        <th>Adjust Price</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let recommendation of recommendationData">
+                                            <td><mat-checkbox></mat-checkbox></td>
+                                            <td>{{recommendation.tariff}}</td>
+                                            <td>{{recommendation.tcv}}</td>
+                                            <td>{{recommendation.investment}}</td>
+                                            <td>{{recommendation.credit}}</td>
+                                            <td>{{recommendation.netValue}}</td>
+                                            <td> <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="alert-tarrif">
+                                <vfpricing-alert [clickEnable]="false" [hasDangerText]="true" [alertType]="'question'" title="Learn about tariffs..."></vfpricing-alert>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-end btn-box">
+                        <button type="button"  class="btn btn-primary d-flex align-items-center justify-content-center" >
+                            <img src="./assets/icons/download.svg" class="mr-2">
+                            CPQ-Ready Summary
+                        </button>
+                        <button type="button"  class="btn btn-primary" >
+                            <img src="./assets/icons/download.svg" class="mr-2">
+                             Summary
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer justify-content-between">
+        <input type="button" class="btn btn-link" value="Previous" />
+    </div>
+</div>
+

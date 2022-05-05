@@ -18,8 +18,9 @@ import { CustomerInfoService } from './components/customer-info/customer-info.se
 import { InvestmentComponent } from './components/investment/investment.component';
 import { ConfigureComponent } from './components/configure/configure.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TariffRecommendationComponent } from './components/tariff-recommendation/tariff-recommendation.component';
 
-const SharedComponent = [CustomerInfoComponent, InvestmentComponent, ConfigureComponent] ;
+const SharedComponent = [CustomerInfoComponent, InvestmentComponent, ConfigureComponent, TariffRecommendationComponent] ;
 const Modules = [
   MatRadioModule,
   MatAutocompleteModule,
