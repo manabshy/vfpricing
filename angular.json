@@ -6,6 +6,7 @@
     "intelligentpricing-e2e": "apps/intelligentpricing-e2e",
     "material": "libs/material",
     "shared": "libs/shared",
-    "shared-e2e": "apps/shared-e2e"
+    "shared-e2e": "apps/shared-e2e",
+    "vf-enums": "libs/vf-enums"
   }
 }

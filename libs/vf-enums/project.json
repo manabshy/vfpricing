@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/vf-enums",
+  "sourceRoot": "libs/vf-enums/src",
+  "prefix": "vfpricing",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/vf-enums"],
+      "options": {
+        "jestConfig": "libs/vf-enums/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/vf-enums/src/**/*.ts",
+          "libs/vf-enums/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

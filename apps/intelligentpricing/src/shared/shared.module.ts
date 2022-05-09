@@ -11,16 +11,26 @@ import { AlertModule, ChartPanelModule, ReportLayoutModule } from '@vfpricing/sh
 import { NgChartsModule } from 'ng2-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
+import { ConfigureComponent } from './components/configure/configure.component';
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
 import { CustomerInfoService } from './components/customer-info/customer-info.service';
+import { NewCustomerComponent } from './components/customer-info/new-customer/new-customer.component';
+import { RenewCustomerComponent } from './components/customer-info/renew-customer/renew-customer.component';
 import { InvestmentComponent } from './components/investment/investment.component';
-import { ConfigureComponent } from './components/configure/configure.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { TariffRecommendationComponent } from './components/tariff-recommendation/tariff-recommendation.component';
 
-const SharedComponent = [CustomerInfoComponent, InvestmentComponent, ConfigureComponent, TariffRecommendationComponent] ;
+const SharedComponent = [
+  CustomerInfoComponent,
+  InvestmentComponent,
+  ConfigureComponent,
+  NewCustomerComponent,
+  TariffRecommendationComponent,
+  RenewCustomerComponent,
+];
+
 const Modules = [
   MatRadioModule,
   MatAutocompleteModule,
@@ -48,7 +58,13 @@ const Modules = [
     ReactiveFormsModule,
     Modules,
   ],
-  exports: [SharedComponent, Modules, BsDropdownModule, AccordionModule, ModalModule],
-  providers: [CustomerInfoService]
+  exports: [
+    SharedComponent,
+    Modules,
+    BsDropdownModule,
+    AccordionModule,
+    ModalModule,
+  ],
+  providers: [CustomerInfoService],
 })
 export class SharedModule {}

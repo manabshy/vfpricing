@@ -8,15 +8,20 @@ import { StepperConfig } from '@vfpricing/shared';
 })
 export class AppComponent {
   title = 'intelligentpricing';
-  selectedStep = 3;
+  selectedStep = 0;
   stepper: StepperConfig[] =  [
-    { label: 'Customer info', step: 0, checked: true },
-    { label: 'Investment & Connections', step: 1 },
-    { label: 'Configure' , step: 2 },
-    { label: 'Tariff Recommendation', step: 3},
+    { label: 'Customer info', step: 0, checked: false },
+    { label: 'Investment & Connections', step: 1,checked: false },
+    { label: 'Configure' , step: 2, checked:false },
+    { label: 'Tariff Recommendation', step: 3, checked: false},
   ];
 
   setStep(item: StepperConfig): void {
     this.selectedStep = item.step;
+  }
+
+  moveNext(step: number): void {
+    this.selectedStep = step + 1;
+    this.stepper[step].checked = true;
   }
 }

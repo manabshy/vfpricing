@@ -8,10 +8,9 @@ import { StepperConfig } from './stepper.interface';
 })
 export class StepperComponent {
   @Input() stepperConfig!: StepperConfig[];
-
+  @Input() selectedIndex = 0;
+  
   @Output() clickEmit = new EventEmitter<any>();
-
-  selectedIndex = 0;
 
   clicked(item: StepperConfig, index: number): void {
     this.selectedIndex = index;
