@@ -13,104 +13,57 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <form formGroupName="marketForm">
-                                    <div class="control-wrapper d-flex align-items-center">
-                                        <div class="control-group col-md-3">
-                                            <div class="control-label">
-                                                Market
-                                            </div>
-                                            <div class="control">
-                                                <mat-select formControlName="market">
-                                                    <mat-option value="">Select Market</mat-option>
-                                                    <mat-option *ngFor="let market of markets" [value]="market.value">
-                                                        {{market.label}}</mat-option>
-                                                </mat-select>
-                                            </div>
-                                        </div>
-                                        <div class="control-group col-md-4 ml-5">
-                                            <div class="control-label">
-                                                Oportunity
-                                            </div>
-                                            <div class="control">
-                                                <mat-radio-group formControlName="oportunity">
-                                                    <mat-radio-button class="margin-right-50px" value="0">New
-                                                    </mat-radio-button>
-                                                    <mat-radio-button value="1">Renew</mat-radio-button>
-                                                </mat-radio-group>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div [class.disabled]="!form?.get('marketForm')?.valid" class="d-flex header-margin flex-column">
-                        <span class="heading-xxl">
-                            About customer
-                        </span>
-                        <div class="subheading heading-l">
-                            Select at lest one account...
-                        </div>
-                        <div *ngIf="form?.get('marketForm')?.valid" class="row">
-                            <div class="col-md-12">
-                                <form formGroupName="customer"></form>
                                 <div class="control-wrapper d-flex align-items-center">
                                     <div class="control-group col-md-3">
                                         <div class="control-label">
                                             Market
                                         </div>
-                                        <div class="control position-relative">
-                                            <div class="btn-group w-100 position-relative d-flex flex-column" dropdown
-                                                #dropdown="bs-dropdown" [insideClick]="true">
-                                                <div dropdownToggle class="control-box">
-                                                    <span class="placeholder" *ngIf="!selected?.length"> Name, Account
-                                                        No,...</span>
-                                                    <span class="selected-value" *ngIf="selected?.length">
-                                                        {{selected?.length}} Account Selected</span>
-                                                </div>
-                                                <span class="search-box">
-                                                    <img src="./assets/icons/search.svg">
-                                                </span>
-                                                <ul id="dropdown-triggers-manual w-100" *dropdownMenu
-                                                    class="dropdown-menu" role="menu"
-                                                    aria-labelledby="button-triggers-manual">
-                                                    <li *ngFor="let data of multiSelect">
-                                                        <mat-checkbox [ngModelOptions]="{standalone: true}"
-                                                            (ngModelChange)="updateAllComplete(data)"
-                                                            [(ngModel)]="data.checked">
-                                                            {{data.value}}
-                                                        </mat-checkbox>
-                                                    </li>
-                                                </ul>
-                                                <div>
-                                                    <div (click)="updateAllComplete(select)"
-                                                        *ngFor="let select of selected" class="selected-chips">
-                                                        {{select.value}}
-                                                        <img role="button" src="./assets/icons/cross.svg" />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="control">
+                                            <mat-select formControlName="market" >
+                                                <mat-option value="">Select Market</mat-option>
+                                                <mat-option *ngFor="let market of markets" [value]="market.value">
+                                                    {{market.label}}</mat-option>
+                                            </mat-select>
                                         </div>
                                     </div>
-                                    <div class="control-group warning-box">
+                                    <div class="control-group col-md-4 ml-5">
                                         <div class="control-label">
+                                            Oportunity
                                         </div>
-                                        <div class="control position-relative">
-                                            <vfpricing-alert [alertType]="'warning'">
-                                                Some slections may not have full 12 months usage/spend history which can
-                                                affect accuracy. Please use the
-                                                “configure usage” if alternations are required.
-                                            </vfpricing-alert>
+                                        <div class="control">
+                                            <mat-radio-group (change)="isValidChildForms = false" formControlName="oportunity">
+                                                <mat-radio-button class="margin-right-50px"
+                                                    [value]="oportunityEnum.New">New
+                                                </mat-radio-button>
+                                                <mat-radio-button [value]="oportunityEnum.Renew">Renew
+                                                </mat-radio-button>
+                                            </mat-radio-group>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex header-margin flex-column">
+                        <span class="heading-xxl" [class.disabled]="!form.valid">
+                            About customer
+                        </span>
+                        <div class="subheading heading-l" [class.disabled]="!form.valid"
+                            *ngIf="!form.valid">
+                            Select at lest one account...
+                        </div>
+                        <ng-container *ngIf="form.valid && form.get('oportunity')?.value === oportunityEnum.New">
+                            <vfpricing-new-customer (emitForm)="isValidChildForms = $event"></vfpricing-new-customer>
+                        </ng-container>
+                        <ng-container *ngIf="form.valid && form.get('oportunity')?.value === oportunityEnum.Renew">
+                            <vfpricing-renew-customer (emitForm)="isValidChildForms = $event">
+                            </vfpricing-renew-customer>
+                        </ng-container>
+                    </div>
                 </div>
 
-                <div class="vf-card-body mt-4">
+                <!-- Show In case of Rewnew Only -->
+                <div *ngIf="form.valid && form.get('oportunity')?.value === oportunityEnum.Renew" class="vf-card-body mt-4">
                     <accordion [isAnimated]="true">
                         <accordion-group (isOpenChange)="isOpen = $event">
                             <div class="justify-content-between d-flex w-100  shadow-none" accordion-heading
@@ -120,7 +73,8 @@
                                     <img [class.rotate-180]="!isOpen" src="./assets/icons/arrow-up-orange.svg">
                                 </span>
                             </div>
-                            <accordion-group panelClass="dark mb-4" (isOpenChange)="this.voiceTrendData.isOpen = $event">
+                            <accordion-group panelClass="dark mb-4"
+                                (isOpenChange)="this.voiceTrendData.isOpen = $event">
                                 <div class="justify-content-between d-flex w-100 panelheader-dark shadow-none"
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Voice</div>
@@ -178,8 +132,10 @@
                         </accordion-group>
                     </accordion>
                 </div>
+                <!-- Show In case of Rewnew Only -->
+
                 <div class="footer">
-                    <input type="button" class="btn btn-primary disabled" value="Save & Next" />
+                    <input type="button" class="btn btn-primary" (click)="submit()" [class.disabled]="!(form.valid && isValidChildForms)" value="Save & Next" />
                 </div>
             </form>
         </div>
