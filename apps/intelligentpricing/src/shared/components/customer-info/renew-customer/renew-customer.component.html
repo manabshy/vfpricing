@@ -3,7 +3,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <form [formGroup]="customerForm">
+        <form>
             <div class="control-wrapper d-flex align-items-center">
                 <div class="control-group col-md-3">
                     <div class="control-label">
@@ -23,7 +23,7 @@
                             </span>
                             <ul id="dropdown-triggers-manual w-100" *dropdownMenu class="dropdown-menu" role="menu"
                                 aria-labelledby="button-triggers-manual">
-                                <li *ngFor="let data of multiSelect" formControlName="customer">
+                                <li *ngFor="let data of multiSelect" >
                                     <mat-checkbox [ngModelOptions]="{standalone: true}"
                                         (ngModelChange)="updateAllComplete(data)" [(ngModel)]="data.checked">
                                         {{data.value}}

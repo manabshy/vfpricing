@@ -5,7 +5,7 @@
         </div>
         <div class="stepper-panel" [ngSwitch]="selectedStep">
             <vfpricing-customer-info *ngSwitchCase="0" (moveNext)="moveNext($event)"></vfpricing-customer-info>
-            <vfpricing-investment *ngSwitchCase="1"></vfpricing-investment>
+            <vfpricing-investment *ngSwitchCase="1"  (emitNext)="moveNext($event)"  (emitPrevious)="moveBack($event)"></vfpricing-investment>
             <vfpricing-configure *ngSwitchCase="2"></vfpricing-configure>
             <vfpricing-tariff-recommendation  *ngSwitchCase="3"></vfpricing-tariff-recommendation>
         </div>

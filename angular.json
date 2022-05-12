@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "assets": "libs/assets",
+    "common": "libs/common",
     "intelligentpricing": "apps/intelligentpricing",
     "intelligentpricing-e2e": "apps/intelligentpricing-e2e",
     "material": "libs/material",

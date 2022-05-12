@@ -1,7 +1,7 @@
 <div class="customer-info-wrapper">
     <div class="row">
         <div class="col-12">
-            <div class="vf-card-body">
+            <div class="vf-card-body mb-2" *ngIf="connectionType === connectionEnum.Renew">
                 <div class="vf-body">
                     <div class="d-flex mb-3 header-margin justify-content-between align-items-center">
                         <span class="heading-xxl">
@@ -14,7 +14,7 @@
                     <vfpricing-alert title="About field" [clickEnable]="false" alertType="info"></vfpricing-alert>
                 </div>
             </div>
-            <div class="vf-card-body mt-2">
+            <div class="vf-card-body">
                 <span class="badge bg-dark">Incomplete</span>
                 <div class="vf-body">
                     <div class="d-flex header-margin flex-column">
@@ -26,168 +26,10 @@
                             Adjust the values as required. </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div>
-                                    <tabset>
-                                        <tab heading="Voice" id="tab1">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    Voice Usage for the last 12 months.
-                                                </div>
-                                                <div
-                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
-                                                    <div class="row d-flex align-items-center justify-content-between">
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="final-tariff">
-                                                    <div class="text-tariff">
-                                                        Apply the above usage adjustments for the final tariff recommendation?
-
-                                                    </div>
-                                                    <div class="control d-flex align-items-center justify-content-start">
-                                                        <mat-radio-group>
-                                                            <mat-radio-button class="margin-right-50px" value="0">Yes
-                                                            </mat-radio-button>
-                                                            <mat-radio-button value="1">No</mat-radio-button>
-                                                        </mat-radio-group>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </tab>
-                                        <tab heading="SMS">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    SMS Usage for the last 12 months.
-                                                </div>
-                                                <div
-                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
-                                                    <div class="row d-flex align-items-center justify-content-between">
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel ></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </tab>
-                                        <tab heading="MMS">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    MMS Usage for the last 12 months.
-                                                </div>
-                                                <div
-                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
-                                                    <div class="row d-flex align-items-center justify-content-between">
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </tab>
-                                        <tab heading="Data">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    Data Usage for the last 12 months.
-                                                </div>
-                                                <div
-                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
-                                                    <div class="row d-flex align-items-center justify-content-between">
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </tab>
-                                        <tab heading="Roaming">
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    Roaming Usage for the last 12 months.
-                                                </div>
-                                                <div
-                                                    class="graph-wrapper d-flex align-items-center justify-content-center">
-                                                    <div class="row d-flex align-items-center justify-content-between">
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                            <vfpricing-chart-panel></vfpricing-chart-panel>
-                                                        </div>
-                                                        <div class="col-4 mb-3">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </tab>
-                                    </tabset>
-                                </div>
+                                <vfpricing-new-configure *ngIf="connectionType === connectionEnum.New">
+                                </vfpricing-new-configure>
+                                <vfpricing-renew-configure *ngIf="connectionType === connectionEnum.Renew">
+                                </vfpricing-renew-configure>
                             </div>
                         </div>
                     </div>
@@ -200,3 +42,5 @@
         </div>
     </div>
 </div>
+
+<
