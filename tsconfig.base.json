@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@vfpricing/assets": ["libs/assets/src/index.ts"],
+      "@vfpricing/common": ["libs/common/src/index.ts"],
       "@vfpricing/material": ["libs/material/src/index.ts"],
       "@vfpricing/shared": ["libs/shared/src/index.ts"],
       "@vfpricing/vf-enums": ["libs/vf-enums/src/index.ts"]

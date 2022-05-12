@@ -22,9 +22,9 @@ export const Defualt = Template.bind({});
 
 Defualt.args = {
   stepperConfig: [
-    { label: 'Step 1', step: 0 },
-    { label: 'Step 2', step: 0 },
-    { label: 'Step 3', step: 0 },
-    { label: 'Step 4', step: 0 },
+    { label: 'Step 1', step: 0, checked: false },
+    { label: 'Step 2', step: 0, checked: false },
+    { label: 'Step 3', step: 0, checked: false },
+    { label: 'Step 4', step: 0, checked: false },
   ],
 };

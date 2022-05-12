@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Oportunity } from '@vfpricing/vf-enums';
 
 @Component({
@@ -7,9 +6,8 @@ import { Oportunity } from '@vfpricing/vf-enums';
   templateUrl: './renew-customer.component.html',
   styleUrls: ['./renew-customer.component.scss']
 })
-export class RenewCustomerComponent  {
+export class RenewCustomerComponent {
   oportunityEnum = Oportunity;
-  customerForm!: FormGroup;
   selected: any[] = [];
   @Output() emitForm = new EventEmitter();
 
@@ -20,14 +18,6 @@ export class RenewCustomerComponent  {
     { value: 'Loreum 4', checked: false },
   ];
 
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.customerForm = this.fb.group({
-      customer: new FormControl([], Validators.required)
-    });
-  }
-  
   updateAllComplete(value: any) {
     const hasValue = this.selected.findIndex(
       (item) => item.value === value.value

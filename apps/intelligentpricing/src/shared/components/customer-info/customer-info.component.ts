@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Oportunity } from '@vfpricing/vf-enums';
+import { CommonService } from '@vfpricing/common';
+import { ConnectionType, Oportunity } from '@vfpricing/vf-enums';
 
 import { CustomerInfoService } from './customer-info.service';
 @Component({
@@ -32,7 +33,7 @@ export class CustomerInfoComponent implements OnInit {
   oportunityEnum = Oportunity;
   @Output() moveNext = new EventEmitter();
   isValidChildForms = false;
-  constructor(private fb: FormBuilder, private service: CustomerInfoService) {}
+  constructor(private fb: FormBuilder, private service: CustomerInfoService, private commonService: CommonService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -50,8 +51,8 @@ export class CustomerInfoComponent implements OnInit {
   }
 
   submit() {
-    this.moveNext.emit(0)
+    this.commonService.connectionType.next(this.form.get('oportunity')?.value === Oportunity.New ? ConnectionType.New : ConnectionType.Renew);
+    this.moveNext.emit(0);
   }
-
 
 }

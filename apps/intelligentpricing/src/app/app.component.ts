@@ -24,4 +24,8 @@ export class AppComponent {
     this.selectedStep = step + 1;
     this.stepper[step].checked = true;
   }
+
+  moveBack(step: number): void {
+    this.selectedStep = step - 1;
+  }
 }

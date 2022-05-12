@@ -9,6 +9,7 @@ export class AlertComponent {
   @Input() alertType!: 'warning' | 'info' | 'question';
   @Input() isVisible!: boolean;
   @Input() title!: string;
+  @Input() showTitle = true;
   @Input() clickEnable = true;
   @Input() hasDangerText = false;
 }

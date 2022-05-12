@@ -12,3 +12,8 @@ export enum Roaming {
     Local = 0,
     Global = 1,
 }
+
+export enum ConnectionType {
+    New = 0,
+    Renew = 1,
+}
