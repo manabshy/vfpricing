@@ -2,7 +2,49 @@
     <tabset>
         <tab heading="Voice" id="tab1">
             <div class="panel mb-5">
-                <vfpricing-range-slider></vfpricing-range-slider>
+                <div class="d-flex align-items-center justify-content-end">
+                    <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
+                    <input type="button" class="btn btn-link" value="Update" />
+                </div>
+                <div class="usage-table-wrapper">
+                    <div class="table-report w-100">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <th>Region</th>
+                                    <th>Monthly Industry
+                                        Avg. calls</th>
+                                    <th>Expected monthly
+                                        call per AC (Mins) </th>
+                                    <th>RAG</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of data">
+                                        <td>{{item.region}}</td>
+                                        <td>{{item.avgCall}} mins</td>
+                                        <td>
+                                            <vfpricing-range-slider [currentValue]="item.avgCall" (valueChange)="updateValue(item, $event)">
+                                            </vfpricing-range-slider>
+                                        </td>
+                                        <td>
+                                            <div  vfpricingRagIcon [currentValue]="item.avgCall">
+                                                <span class="icon"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="usage-split-wrapper">
+                <div class="heading-info">
+                    Usage Split
+                </div>
+                <div class="sub-text">
+                    Your quote will be calculated based on the following “Energy & Utilities” usage average. Adjust the values as required.
+                </div>
             </div>
         </tab>
         <tab heading="SMS">
@@ -20,7 +62,7 @@
         </tab>
         <tab heading="Roaming">
             <div class="panel">
-               
+
             </div>
         </tab>
     </tabset>

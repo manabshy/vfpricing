@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, Output, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, Renderer2, ViewChild } from '@angular/core';
 
 import { RangeService } from './range.service';
 
@@ -13,9 +13,9 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
   public iMaxLeft = 0;
   public iMinLeft = 0;
   public iNewLeft = 0;
-  public currentValue = 0;
   public removeEventListener!: () => void;
-
+  
+  @Input() currentValue = 0;
   @ViewChild('slider') slider!: ElementRef<HTMLElement>;
   @ViewChild('thumb') thumb!: ElementRef<HTMLElement>;
   @ViewChild('currentValueTemplate') currentValueTemplate!: ElementRef<HTMLElement>;
@@ -25,8 +25,7 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     if (this.thumb && this.slider) {
-      this.colorCode();
-      this.setPosition();
+    
       this.rendrer.listen(
         this.thumb.nativeElement,
         'mousedown',
@@ -37,7 +36,7 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
         'mouseup',
         this.onMouseMove.bind(this)
       );
-      this.posMouseX = this.thumb.nativeElement.getBoundingClientRect().x;
+      
       this.rendrer.listen(window, 'mouseup', this.onMouseUp.bind(this));
       this.rangeService.hasMouserUpAdded = true;
       this.iMinLeft = this.thumb?.nativeElement.offsetLeft;
@@ -45,6 +44,14 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
         this.slider.nativeElement.clientWidth -
         this.thumb.nativeElement.offsetWidth -
         this.iMinLeft;
+        if(this.currentValue) {
+          this.iNewLeft = (this.currentValue * this.iMaxLeft)/100;
+          this.thumb.nativeElement.style.left = this.iNewLeft+'px';
+          this.valueChange.emit(this.currentValue);
+        } 
+        this.posMouseX = this.thumb.nativeElement.getBoundingClientRect().x;
+        this.colorCode();
+        this.setPosition();
     }
   }
 
@@ -99,6 +106,7 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
       this.currentValue = Math.round((this.iNewLeft / this.iMaxLeft) * 100);
       this.setPosition();
       this.colorCode();
+      this.valueChange.emit(this.currentValue);
     }
   }
 

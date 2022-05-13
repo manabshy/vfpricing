@@ -220,3 +220,54 @@ body {
   .danger {
       color: #BD0000 !important;
   }
+
+  .success {
+    background: #008A00;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+        background-image: url('../assets/src/assets/icons/check.svg');
+        background-repeat: no-repeat;
+        height: 11px;
+        width: 16px;
+        display: block;
+    }
+}
+
+.warning {
+    background: #eb6100;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+        background-image: url('../assets/src/assets/icons/exclamation.svg');
+        background-repeat: no-repeat;
+        height: 11px;
+        width: 2px;
+        display: block;
+    }
+}
+
+.danger {
+    background: #e60000;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+        background-image: url('../assets/src/assets/icons/check.svg');
+        background-repeat: no-repeat;
+        height: 11px;
+        width: 16px;
+        display: block;
+    }
+}

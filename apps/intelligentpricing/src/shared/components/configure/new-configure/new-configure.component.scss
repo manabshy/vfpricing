@@ -1,80 +1,32 @@
 @import '../configure.component.scss';
 
-#div {
-    width: 100%;
-    height: 6px;
-    position: relative;
-    display: flex;
-
-    .part {
-        width: 33%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .dot {
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            display: block;
-            border-radius: 50%;
-        }
-    }
-
-    .part5,
-    .part1 {
-        width: 20%;
-        height: 6px;
-        background-color: #E60000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .part1 {
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-
-    .part5 {
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-
-    .part3 {
-        width: 20%;
-        height: 6px;
-        background-color: #008A00;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .part2,
-    .part4 {
-        background-color: #EB6100;
-        width: 20%;
-        height: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
+.table thead th {
+    border: unset !important;
+    vertical-align: bottom;
+    border-bottom: 2px solid #4A4D4E !important;
 }
 
-#span {
-    cursor: pointer;
-    left: 0px;
-    top: -7px;
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    display: block;
+.table th, .table td {
+    padding: 2rem 0.75rem;
 }
 
-.current-value {
-    position: absolute;
-    top: 20px;
-    right: 50%;
+td:nth-child(1),
+th:nth-child(1) {
+    width: 6%;
 }
+
+td:nth-child(2),
+th:nth-child(2) {
+    width: 10%;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
+    width: 30%;
+}
+
+td:nth-child(4),
+th:nth-child(4) {
+    width: 10%;
+}
+

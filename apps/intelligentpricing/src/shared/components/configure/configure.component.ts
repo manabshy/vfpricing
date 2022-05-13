@@ -19,7 +19,7 @@ export class ConfigureComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.commonService.connectionType
     .pipe(takeUntil(this.destroy$))
-    .subscribe(value => this.connectionType = value);
+    .subscribe(value => this.connectionType = ConnectionType.New);
   }
 
   ngOnDestroy(): void {
