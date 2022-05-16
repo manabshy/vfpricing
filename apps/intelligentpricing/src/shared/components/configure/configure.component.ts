@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { CommonService } from '@vfpricing/common';
 import { ConnectionType } from '@vfpricing/vf-enums';
 import { Subject, takeUntil } from 'rxjs';
@@ -15,11 +15,21 @@ export class ConfigureComponent implements OnInit, OnDestroy {
   connectionEnum = ConnectionType;
   connectionType!: ConnectionType | null;
   destroy$ = new Subject();
-
+  @Output() emitNext = new EventEmitter();
+  @Output() emitPrevious = new EventEmitter();
+  
   ngOnInit(): void {
     this.commonService.connectionType
     .pipe(takeUntil(this.destroy$))
     .subscribe(value => this.connectionType = ConnectionType.New);
+  }
+
+  moveBack() {
+    this.emitPrevious.emit(2);
+  }
+
+  moveNext() {
+    this.emitNext.emit(2);
   }
 
   ngOnDestroy(): void {

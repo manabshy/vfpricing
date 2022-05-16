@@ -14,29 +14,27 @@ export class RagIconDirective implements OnChanges {
   }
 
   removeAllClasses() {
-    this.render.removeClass(this.el.nativeElement, 'danger');
-    this.render.removeClass(this.el.nativeElement, 'success');
-    this.render.removeClass(this.el.nativeElement, 'warning');
+    this.render.removeClass(this.el.nativeElement, 'danger-rng');
+    this.render.removeClass(this.el.nativeElement, 'success-rng');
+    this.render.removeClass(this.el.nativeElement, 'warning-rng');
   }
 
   colorCode(): void {
-    if (this.el.nativeElement && this.currentValue) {
+    if (this.el.nativeElement) {
       this.removeAllClasses();
       if (
         (this.currentValue >= 0 && this.currentValue < 20) ||
         (this.currentValue > 79 && this.currentValue <= 100)
       ) {
-        this.render.addClass(this.el.nativeElement, 'danger');
+        this.render.addClass(this.el.nativeElement, 'danger-rng');
       } else if (
         (this.currentValue >= 19 && this.currentValue <= 39) ||
         (this.currentValue > 59 && this.currentValue <= 80)
       ) {
-        this.render.addClass(this.el.nativeElement, 'warning');
+        this.render.addClass(this.el.nativeElement, 'warning-rng');
       } else if (this.currentValue >= 40 && this.currentValue <= 60) {
-        this.render.addClass(this.el.nativeElement, 'success');
+        this.render.addClass(this.el.nativeElement, 'success-rng');
       }
-    } else {
-      this.render.addClass(this.el.nativeElement, 'danger');
     }
   }
 

@@ -1,32 +1,90 @@
 @import '../configure.component.scss';
 
-.table thead th {
-    border: unset !important;
-    vertical-align: bottom;
-    border-bottom: 2px solid #4A4D4E !important;
+.table-wrapper {
+
+    .table th,
+    .table td {
+        padding: 2rem 0.75rem;
+    }
+
+
+    .table thead th {
+        border: unset !important;
+        vertical-align: bottom;
+        border-bottom: 2px solid #4A4D4E !important;
+    }
+
+    td:nth-child(1),
+    th:nth-child(1) {
+        width: 6%;
+    }
+
+    td:nth-child(2),
+    th:nth-child(2) {
+        width: 10%;
+    }
+
+    td:nth-child(3),
+    th:nth-child(3) {
+        width: 30%;
+    }
+
+    td:nth-child(4),
+    th:nth-child(4) {
+        width: 10%;
+    }
 }
 
-.table th, .table td {
-    padding: 2rem 0.75rem;
-}
 
-td:nth-child(1),
-th:nth-child(1) {
-    width: 6%;
-}
 
-td:nth-child(2),
-th:nth-child(2) {
-    width: 10%;
-}
+.usage-split-wrapper {
+    background: #fff;
+    padding: 72px 0 40px 0;
 
-td:nth-child(3),
-th:nth-child(3) {
-    width: 30%;
-}
+    .heading-info {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 44px;
+    }
 
-td:nth-child(4),
-th:nth-child(4) {
-    width: 10%;
-}
+    .sub-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+    }
 
+    .panel-boxes {
+        margin-top: 40px;
+    }
+
+    .panel-box-header {
+        background: #262626;
+        border-radius: 6px 6px 0px 0px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 48px;
+    }
+
+    .panel-body {
+        background: #F2F2F2;
+    }
+
+    .table-heading {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 32px;
+        text-align: center;
+        padding: 44px 0 34px 0;
+    }
+
+    .table thead th {
+        border: unset !important;
+        vertical-align: bottom;
+        border-bottom: 2px solid #4A4D4E !important;
+    }
+}

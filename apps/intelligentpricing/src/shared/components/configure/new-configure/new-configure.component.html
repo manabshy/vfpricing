@@ -1,7 +1,7 @@
 <div>
     <tabset>
         <tab heading="Voice" id="tab1">
-            <div class="panel mb-5">
+            <div class="panel">
                 <div class="d-flex align-items-center justify-content-end">
                     <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
                     <input type="button" class="btn btn-link" value="Update" />
@@ -23,11 +23,12 @@
                                         <td>{{item.region}}</td>
                                         <td>{{item.avgCall}} mins</td>
                                         <td>
-                                            <vfpricing-range-slider [currentValue]="item.avgCall" (valueChange)="updateValue(item, $event)">
+                                            <vfpricing-range-slider [currentValue]="item.avgCall"
+                                                (valueChange)="updateValue(item, $event)">
                                             </vfpricing-range-slider>
                                         </td>
                                         <td>
-                                            <div  vfpricingRagIcon [currentValue]="item.avgCall">
+                                            <div vfpricingRagIcon [currentValue]="item.avgCall">
                                                 <span class="icon"></span>
                                             </div>
                                         </td>
@@ -36,14 +37,6 @@
                             </table>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="usage-split-wrapper">
-                <div class="heading-info">
-                    Usage Split
-                </div>
-                <div class="sub-text">
-                    Your quote will be calculated based on the following “Energy & Utilities” usage average. Adjust the values as required.
                 </div>
             </div>
         </tab>
@@ -66,4 +59,528 @@
             </div>
         </tab>
     </tabset>
+
+    <div class="usage-split-wrapper">
+        <div class="heading-info">
+            Usage Split
+        </div>
+        <div class="sub-text">
+            Your quote will be calculated based on the following “Energy & Utilities” usage average. Adjust the values
+            as required.
+        </div>
+        <div class="panel-boxes">
+            <div class="panel-box-header">
+                Voice
+            </div>
+            <div class="panel-body">
+                <div class="table-heading">
+                    National (UK)
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        KPI
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    International
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        KPI
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    Roaming Incoming
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        KPI
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    Roaming Outgoing
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        KPI
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    Premium
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        KPI
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-boxes">
+            <div class="panel-box-header">
+                SMS
+            </div>
+            <div class="panel-body">
+                <div class="table-heading">
+                    National (UK)
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Region
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    International
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Usage Type
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    Roaming
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Usage Type
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-boxes">
+            <div class="panel-box-header">
+                MMS
+            </div>
+            <div class="panel-body">
+                <div class="table-heading">
+                    National (UK)
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Region
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    International
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Usage Type
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    Roaming
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Usage Type
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-boxes">
+            <div class="panel-box-header">
+                Roaming
+            </div>
+            <div class="panel-body">
+                <div class="table-heading">
+                    National (UK)
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Region
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    International
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Usage Type
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-heading">
+                    Roaming
+                </div>
+                <div class="table-report d-flex align-items-center justify-content-center">
+                    <div class="usage-split-table-wrapper  w-50">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        Usage Type
+                                    </th>
+                                    <th>
+                                        % Of Usage
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mobile to Landline (call)</td>
+                                        <td>20%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
