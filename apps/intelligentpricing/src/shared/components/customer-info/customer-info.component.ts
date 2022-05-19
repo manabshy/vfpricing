@@ -45,7 +45,7 @@ export class CustomerInfoComponent implements OnInit {
 
   initForm(): void {
     this.form = this.fb.group({
-      market: ['', Validators.required],
+      market: [1, Validators.required],
       oportunity: ['', Validators.required],
     });
   }

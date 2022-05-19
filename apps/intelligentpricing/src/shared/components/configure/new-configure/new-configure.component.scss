@@ -1,80 +1,95 @@
 @import '../configure.component.scss';
 
-#div {
-    width: 100%;
-    height: 6px;
-    position: relative;
-    display: flex;
+.table-wrapper {
 
-    .part {
-        width: 33%;
+    .table th,
+    .table td {
+        padding: 2rem 0.75rem;
+    }
+
+
+    .table thead th {
+        border: unset !important;
+        vertical-align: bottom;
+        border-bottom: 2px solid #4A4D4E !important;
+    }
+
+    td:nth-child(1),
+    th:nth-child(1) {
+        width: 6%;
+    }
+
+    td:nth-child(2),
+    th:nth-child(2) {
+        width: 10%;
+    }
+
+    td:nth-child(3),
+    th:nth-child(3) {
+        width: 30%;
+    }
+
+    td:nth-child(4),
+    th:nth-child(4) {
+        width: 10%;
+    }
+}
+
+.arrow-icon {
+    height: 12px;
+    width: 17px;
+    position: absolute;
+    right: 20px;
+}
+
+.usage-split-wrapper {
+    background: #fff;
+    padding: 72px 0 40px 0;
+
+    .heading-info {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 44px;
+    }
+
+    .sub-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .panel-boxes {
+        margin-top: 40px;
+    }
+
+    .panel-box-header {
+        background: #262626;
+        border-radius: 6px 6px 0px 0px;
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .dot {
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            display: block;
-            border-radius: 50%;
-        }
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 48px;
     }
 
-    .part5,
-    .part1 {
-        width: 20%;
-        height: 6px;
-        background-color: #E60000;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .panel-body {
+        background: #F2F2F2;
     }
 
-    .part1 {
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
+    .table-heading {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 32px;
+        text-align: center;
+        padding: 44px 0 34px 0;
     }
 
-    .part5 {
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+    .table thead th {
+        border: unset !important;
+        vertical-align: bottom;
+        border-bottom: 2px solid #4A4D4E !important;
     }
-
-    .part3 {
-        width: 20%;
-        height: 6px;
-        background-color: #008A00;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .part2,
-    .part4 {
-        background-color: #EB6100;
-        width: 20%;
-        height: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-}
-
-#span {
-    cursor: pointer;
-    left: 0px;
-    top: -7px;
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    display: block;
-}
-
-.current-value {
-    position: absolute;
-    top: 20px;
-    right: 50%;
 }

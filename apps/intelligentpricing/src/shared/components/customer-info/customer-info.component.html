@@ -20,7 +20,6 @@
                                         </div>
                                         <div class="control">
                                             <mat-select formControlName="market" >
-                                                <mat-option value="">Select Market</mat-option>
                                                 <mat-option *ngFor="let market of markets" [value]="market.value">
                                                     {{market.label}}</mat-option>
                                             </mat-select>
@@ -28,7 +27,7 @@
                                     </div>
                                     <div class="control-group col-md-4 ml-5">
                                         <div class="control-label">
-                                            Oportunity
+                                            Opportunity
                                         </div>
                                         <div class="control">
                                             <mat-radio-group (change)="isValidChildForms = false" formControlName="oportunity">
@@ -50,7 +49,7 @@
                         </span>
                         <div class="subheading heading-l" [class.disabled]="!form.valid"
                             *ngIf="!form.valid">
-                            Select at lest one account...
+                            Select at least one account...
                         </div>
                         <ng-container *ngIf="form.valid && form.get('oportunity')?.value === oportunityEnum.New">
                             <vfpricing-new-customer (emitForm)="isValidChildForms = $event"></vfpricing-new-customer>
