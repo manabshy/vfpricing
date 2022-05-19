@@ -7,7 +7,10 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 })
 export class NewConfigureComponent {
   currentValue = 0;
-
+  voiceAccordian!: boolean;
+  smsAccordian!: boolean;
+  mmsAccordian!: boolean;
+  roamingAccordian!:boolean;
   data = [
     {region: 'National', avgCall: 10},
     {region: 'International', avgCall: 30},

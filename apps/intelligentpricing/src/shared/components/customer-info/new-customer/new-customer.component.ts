@@ -24,8 +24,8 @@ export class NewCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       vertical: new FormControl('', Validators.required),
-      roaming: new FormControl('', Validators.required),
-      usage: new FormControl('', Validators.required)
+      roaming: new FormControl(this.roamingEnum.Global, Validators.required),
+      usage: new FormControl(this.usageEnum.Account, Validators.required)
     });
     this.subscribeFormChange();
   }

@@ -11,8 +11,8 @@ import { Subject, takeUntil } from 'rxjs';
 export class InvestmentComponent implements OnInit, OnDestroy {
   contractLength = [
     {
-      label: '12 months',
-      value: 12,
+      label: '24 months',
+      value: 24,
     },
     {
       label: '11 months',
@@ -24,7 +24,7 @@ export class InvestmentComponent implements OnInit, OnDestroy {
     },
   ];
 
-  selectedContract = '';
+  selectedContract = 24;
   connectionEnum = ConnectionType;
   connectionType!: ConnectionType | null;
   destroy$ = new Subject();
