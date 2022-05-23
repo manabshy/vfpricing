@@ -5,9 +5,18 @@
   width: 100%;
 }
 
-.vf-body {
-  padding: 26px 100px;
+
+.header-margin {
+  margin-top: 72px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  @media screen and (max-width: 780px) {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
 }
+
 
 .configure-panel {
   padding: 46px 30px;

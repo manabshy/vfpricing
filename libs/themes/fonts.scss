@@ -1,5 +1,11 @@
 
 @font-face {
+    font-family: 'vodafone-ex-bold';
+    src: url('../assets/src/assets/fonts/Vodafone-ex-bold.ttf');
+    font-display: fallback;
+}
+
+@font-face {
     font-family: 'vodafone-rg-regular';
     src: url('../assets/src/assets/fonts/VodafoneRg-Regular.ttf');
     font-display: fallback;

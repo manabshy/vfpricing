@@ -50,7 +50,8 @@
             <span class="part"><span class="dot"></span></span>
         </div>
         <span id="thumb" #thumb>
-            <span id="current-value" #currentValueTemplate class="current-value">{{currentValue}}</span>
+            <span id="active-value" [hidden]="!mouseMoving" class="active-value">{{currentValue}}</span>
+            <span id="current-value" [hidden]="mouseMoving" #currentValueTemplate class="current-value">{{currentValue}}</span>
         </span>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="header-layout">
     <div class="left-bar">
-        <img class="hamburger" role="button" src="./assets/icons/hamburger.svg">
+        <img class="hamburger" (click)="toggleMenu()" role="button" src="./assets/icons/hamburger.svg">
         <img class="logo-icon" role="button" src="./assets/logo/logo.svg">
     </div>
     <div class="center-heading">
@@ -9,4 +9,21 @@
 </div>
 <div>
     <ng-content></ng-content>
+</div>
+
+
+<div class="flyout-wrapper" #menuBar>
+    <div class="cross-icon" (click)="toggleMenu()">
+        <img src="./assets/icons/cross-white.svg">
+    </div>
+
+    <div class="menu">
+        Menu
+    </div>
+
+    <div class="menu-item">
+        <a>What's new?</a>
+        <a>Training</a>
+        <a>Support</a>
+    </div>
 </div>

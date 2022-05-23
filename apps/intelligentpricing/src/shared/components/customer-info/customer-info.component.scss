@@ -8,6 +8,10 @@
 .header-margin {
     margin-top: 72px;
     margin-left: 60px;
+    @media screen and (max-width: 780px) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 .subheading {
@@ -16,6 +20,10 @@
 
 .control-wrapper {
     margin-top: 40px;
+    @media screen and (max-width: 780px) {
+       align-items: center;
+       justify-content: space-between;
+    }
 }
 
 .search-box {

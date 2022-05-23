@@ -128,12 +128,12 @@ body {
         background: #F2F2F2;
     }
 
-    
+
 }
 
 .panel.card.dark.p0 {
     .card-header.panel-enabled {
-       padding: 0;
+        padding: 0;
     }
 
     .card-body {
@@ -169,6 +169,11 @@ body {
     margin: 0 35px;
     background-color: $white-color;
     padding: 24px 40px;
+
+    @media screen and (max-width: 780px) {
+        padding: 24px;
+        margin: 0 15px;
+    }
 }
 
 

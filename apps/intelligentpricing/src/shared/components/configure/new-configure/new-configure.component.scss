@@ -93,3 +93,9 @@
         border-bottom: 2px solid #4A4D4E !important;
     }
 }
+
+.usage-split-table-wrapper {
+    @media screen and (max-width: 780px) {
+       width: 70% !important;
+    }
+}
