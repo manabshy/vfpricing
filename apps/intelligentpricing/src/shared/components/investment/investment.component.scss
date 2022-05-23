@@ -13,6 +13,11 @@
     margin-top: 72px;
     margin-left: 60px;
     margin-right: 60px;
+
+    @media screen and (max-width: 780px) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 
@@ -82,4 +87,14 @@ mat-radio-group.mat-radio-group {
     border: unset !important;
     vertical-align: bottom;
     border-bottom: 2px solid #4A4D4E !important;
+}
+
+.device-invetment-info {
+    @media screen and (max-width: 780px) {
+        flex-direction: column;
+
+        .col-md-3 {
+            max-width: 60.33%;
+        }
+    }
 }

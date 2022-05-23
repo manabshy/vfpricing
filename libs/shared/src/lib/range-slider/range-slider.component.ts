@@ -20,6 +20,7 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
   @ViewChild('thumb') thumb!: ElementRef<HTMLElement>;
   @ViewChild('currentValueTemplate') currentValueTemplate!: ElementRef<HTMLElement>;
   @Output() valueChange = new EventEmitter();
+  mouseMoving!: boolean;
 
   constructor(private rendrer: Renderer2, private rangeService: RangeService) {}
 
@@ -90,6 +91,7 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
   }
 
   onMouseMove(e: MouseEvent): void {
+    this.mouseMoving = true;
     e.preventDefault();
     this.deltaX = this.posMouseX - e.clientX;
     if (this.thumb) {
@@ -135,6 +137,7 @@ export class RangeSliderComponent implements AfterViewInit, OnDestroy {
 
   onMouseUp(e: MouseEvent): void {
     if (e.which === 1) {
+      this.mouseMoving = false;
       e.preventDefault();
       this.rangeService.hasEventAdded = false;
       this.removeEventListener ? this.removeEventListener() : '';

@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'vfpricing-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
-  ngOnInit(): void {
+  @ViewChild('menuBar') menuBar!: ElementRef<HTMLElement>;
+
+  toggleMenu(): void {
+    this.menuBar.nativeElement.classList.toggle('expanded');
   }
 
 }
