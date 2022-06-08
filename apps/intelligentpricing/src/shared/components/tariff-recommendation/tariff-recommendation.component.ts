@@ -79,7 +79,7 @@ export class TariffRecommendationComponent implements OnInit {
   ];
 
   @Output() emitPrevious = new EventEmitter();
-
+  isAccordianOpen!: boolean;
   constructor() {}
 
   ngOnInit(): void {}

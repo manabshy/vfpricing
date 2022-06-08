@@ -6,10 +6,11 @@
                     <div class="d-flex justify-content-between">
                         <span class="heading-xxl">
                             Tariff recommendation
-                                                </span>
+                        </span>
                     </div>
                     <div class="subheading heading-l mt-5 mb-4">
-                        Based on “Energy & Utilities” usage average and your configurations, the following tariffs recommended...
+                        Based on “Energy & Utilities” usage average and your configurations, the following tariffs
+                        recommended...
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12 d-flex flex-column table-panel">
@@ -57,35 +58,110 @@
                                         <th>Adjust Price</th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let recommendation of recommendationData">
-                                            <td><mat-checkbox></mat-checkbox></td>
-                                            <td>{{recommendation.tariff}}</td>
-                                            <td>{{recommendation.tcv}}</td>
-                                            <td>{{recommendation.investment}}</td>
-                                            <td>{{recommendation.credit}}</td>
-                                            <td>{{recommendation.netValue}}</td>
-                                            <td> <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label></td>
-                                        </tr>
+                                        <ng-container *ngFor="let recommendation of recommendationData;let i=index;">
+                                            <tr>
+                                                <td>
+                                                    <mat-checkbox></mat-checkbox>
+                                                </td>
+                                                <td>{{recommendation.tariff}}</td>
+                                                <td>{{recommendation.tcv}}</td>
+                                                <td>{{recommendation.investment}}</td>
+                                                <td>{{recommendation.credit}}</td>
+                                                <td>{{recommendation.netValue}}</td>
+                                                <td> <label class="switch">
+                                                        <input type="checkbox" checked>
+                                                        <span class="slider round"></span>
+                                                    </label></td>
+                                            </tr>
+                                            <tr *ngIf="i === 0">
+                                                <td colspan="10">
+                                                    <div class="addon-wrapper position-relative">
+                                                        <span class="d-flex align-items-center arrow-box">
+                                                            <img class="arrow-icon" [class.rotate-180]="!isAccordianOpen"
+                                                                src="./assets/icons/arrow-up-gray.svg">
+                                                        </span>
+                                                        <accordion [isAnimated]="true">
+                                                            <accordion-group panelClass="p0" (isOpenChange)="this.isAccordianOpen = $event">
+                                                                    <div class="add-ons-section" accordion-heading>
+                                                                        <div class="w-35 lbl-section">Add-ons</div>
+                                                                        <div class="w-10 lbl-section">Qty</div>
+                                                                    </div>
+                                                                    <div class="add-on-panel">
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row-group">
+                                                                            <div class="w-35 value-section">Add-ons</div>
+                                                                            <div class="w-10 value-section">
+                                                                                <input type="text" class="control-box" placeholder="XXXX">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="footer-section">
+                                                                            <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center">
+                                                                                Clear "Add-ons"
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-primary">
+                                                                                Update "Add-ons"
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                            </accordion-group>
+                                                        </accordion>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </ng-container>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="alert-tarrif">
-                                <vfpricing-alert [clickEnable]="false" [hasDangerText]="true" [alertType]="'question'" title="Learn about tariffs..."></vfpricing-alert>
+                                <vfpricing-alert [clickEnable]="false" [hasDangerText]="true" [alertType]="'question'"
+                                    title="Learn about tariffs..."></vfpricing-alert>
                             </div>
-                           
+
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-end btn-box">
-                        <button type="button"  class="btn btn-primary d-flex align-items-center justify-content-center" >
+                        <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center">
                             <img src="./assets/icons/download.svg" class="mr-2">
                             CPQ-Ready Summary
                         </button>
-                        <button type="button"  class="btn btn-primary" >
+                        <button type="button" class="btn btn-primary">
                             <img src="./assets/icons/download.svg" class="mr-2">
-                             Summary
+                            Summary
                         </button>
                     </div>
                 </div>
@@ -96,4 +172,3 @@
         <input type="button" class="btn btn-link" (click)="moveBack()" value="Previous" />
     </div>
 </div>
-
