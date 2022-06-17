@@ -8,12 +8,11 @@ import { LayoutModule, StepperModule } from '@vfpricing/shared';
 
 import { SharedModule } from '../shared/shared.module';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-
+ 
 const LibraryModules = [StepperModule, LayoutModule];
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,

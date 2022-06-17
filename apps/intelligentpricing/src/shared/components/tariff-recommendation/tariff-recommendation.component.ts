@@ -79,7 +79,6 @@ export class TariffRecommendationComponent implements OnInit {
   ];
 
   @Output() emitPrevious = new EventEmitter();
-
   constructor() {}
 
   ngOnInit(): void {}

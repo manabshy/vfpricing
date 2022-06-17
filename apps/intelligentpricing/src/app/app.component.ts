@@ -14,7 +14,7 @@ import { StepperConfig } from '@vfpricing/shared';
 })
 export class AppComponent {
   title = 'intelligentpricing';
-  selectedStep = 0;
+  selectedStep = 3;
   @ViewChild('stepperWrapper') stepperWrapper!: ElementRef<HTMLElement>;
   @ViewChild('stepperPanel') stepperPanel!: ElementRef<HTMLElement>;
   stepper: StepperConfig[] = [
