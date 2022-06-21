@@ -1,0 +1,68 @@
+@import '../../../../../libs/themes/variables.scss';
+
+.customer-info-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+
+.header-margin {
+  margin-top: 72px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  @media screen and (max-width: 820px) {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+}
+
+
+.configure-panel {
+  padding: 46px 30px;
+}
+
+.panel-heading {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 61px;
+}
+
+.subheading {
+  margin: 40px 0;
+}
+
+// vfpricing-chart-panel {
+//   width: 100%;
+// }
+
+.col-4 {
+  max-width: 30%;
+  flex: 0 0 30%;
+}
+
+.final-tariff {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 18px;
+
+  .text-tariff {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 48px;
+    color: #0D0D0D;
+  }
+
+  .control {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,58 @@
+<div class="subheading heading-l">
+    Select at least one account...
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="control-wrapper d-flex align-items-center">
+                <div class="control-group col-lg-3 col-md-4">
+                    <div class="control-label">
+                        Search
+                    </div>
+                    <div class="control position-relative">
+                        <div class="btn-group w-100 position-relative d-flex flex-column" dropdown
+                            #dropdown="bs-dropdown" [insideClick]="true">
+                            <div dropdownToggle class="control-box">
+                                <span class="placeholder" *ngIf="!selected?.length"> Name, Account
+                                    No,...</span>
+                                <span class="selected-value" *ngIf="selected?.length">
+                                    {{selected?.length}} Account Selected</span>
+                            </div>
+                            <span class="search-box">
+                                <img src="./assets/icons/search.svg">
+                            </span>
+                            <ul id="dropdown-triggers-manual w-100" *dropdownMenu class="dropdown-menu" role="menu"
+                                aria-labelledby="button-triggers-manual">
+                                <li *ngFor="let data of multiSelect" >
+                                    <mat-checkbox [ngModelOptions]="{standalone: true}"
+                                        (ngModelChange)="updateAllComplete(data)" [(ngModel)]="data.checked">
+                                        {{data.value}}
+                                    </mat-checkbox>
+                                </li>
+                            </ul>
+                            <div>
+                                <div (click)="updateAllComplete(select)" *ngFor="let select of selected"
+                                    class="selected-chips">
+                                    {{select.value}}
+                                    <img role="button" src="./assets/icons/cross.svg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group warning-box">
+                    <div class="control-label">
+                    </div>
+                    <div class="control position-relative">
+                        <vfpricing-alert [alertType]="'warning'">
+                            Some slections may not have full 12 months usage/spend history which can
+                            affect accuracy. Please use the
+                            “configure usage” if alternations are required.
+                        </vfpricing-alert>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

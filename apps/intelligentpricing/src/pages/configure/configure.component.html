@@ -1,0 +1,46 @@
+<div class="customer-info-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <div class="vf-card-body mb-2" *ngIf="connectionType === connectionEnum.Renew">
+                <div class="vf-body">
+                    <div class="d-flex mb-3 header-margin justify-content-between align-items-center">
+                        <span class="heading-xxl">
+                            Configure with existing usage only? </span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <vfpricing-alert title="About field" [clickEnable]="false" alertType="info"></vfpricing-alert>
+                </div>
+            </div>
+            <div class="vf-card-body">
+                <span class="badge bg-dark">Incomplete</span>
+                <div class="vf-body">
+                    <div class="d-flex header-margin flex-column">
+                        <span class="heading-xxl">
+                            Usage info
+                        </span>
+                        <div class="subheading heading-l">
+                            Your quote will be calculated based on the following “Energy & Utilities” usage average.
+                            Adjust the values as required. </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <vfpricing-new-configure *ngIf="connectionType === connectionEnum.New">
+                                </vfpricing-new-configure>
+                                <vfpricing-renew-configure *ngIf="connectionType === connectionEnum.Renew">
+                                </vfpricing-renew-configure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer justify-content-between">
+                <input type="button" class="btn btn-link" (click)="moveBack()" value="Previous" />
+                <input type="button" class="btn btn-primary" (click)="moveNext()" value="Save & Next" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<

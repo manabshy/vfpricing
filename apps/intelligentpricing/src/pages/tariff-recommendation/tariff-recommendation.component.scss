@@ -1,0 +1,109 @@
+.table-heading {
+    background: #262626;
+    display: flex;
+    padding: 16px 30px;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 34px;
+}
+
+.table-wrapper {
+    margin: 0 30px;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+
+    th {
+        border: unset !important
+    }
+
+    td {
+        border-top: 2px solid #4A4D4E;
+        border-bottom: 2px solid #4A4D4E;
+    }
+
+}
+
+.table-panel {
+    background: #F2F2F2;
+}
+
+.alert-tarrif {
+    margin: 0 30px;
+    margin-bottom: 36px;
+}
+
+.btn-box {
+    margin-right: 40px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.header-margin {
+    margin-top: 72px;
+    margin-left: 60px;
+    margin-right: 60px;
+
+    @media screen and (max-width: 820px) {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+::ng-deep .addon-wrapper {
+    display: flex;
+    margin-left: 24px;
+
+    .panel-group {
+        width: 100%;
+    }
+
+    .arrow-box {
+        position: absolute;
+        left: -27px;
+        top: 14px;
+    }
+
+    .panel-collapse {
+        background: #f2f2f2;
+    }
+
+    .add-ons-section {
+        display: flex;
+        align-items: center;
+        background: #d1d1d1;
+        padding: 10px 20px;
+        font-weight: 700;
+    }
+
+    .w-10 {
+        width: 10%
+    }
+
+    .footer-section {
+        display: flex;
+        width: 45%;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .w-35 {
+        width: 35%;
+    }
+
+    .row-group {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .panel {
+        border: unset;
+    }
+
+    .panel-heading {
+        padding: 0;
+    }
+}

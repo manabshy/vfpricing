@@ -1,0 +1,825 @@
+<div>
+    <tabset>
+        <tab heading="Voice" id="tab1">
+            <div class="configure-panel">
+                <div class="d-flex align-items-center justify-content-end">
+                    <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
+                    <input type="button" class="btn btn-link" value="Update" />
+                </div>
+                <div class="usage-table-wrapper">
+                    <div class="table-report w-100">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <th>Region</th>
+                                    <th>Monthly Industry
+                                        Avg. calls</th>
+                                    <th>Expected monthly
+                                        call per AC (Mins) </th>
+                                    <th>RAG</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of data">
+                                        <td>{{item.region}}</td>
+                                        <td>{{item.avgCall}} mins</td>
+                                        <td>
+                                            <vfpricing-range-slider [currentValue]="item.avgCall"
+                                                (valueChange)="updateValue(item, $event)">
+                                            </vfpricing-range-slider>
+                                        </td>
+                                        <td>
+                                            <div vfpricingRagIcon [currentValue]="item.avgCall">
+                                                <span class="icon"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="SMS">
+            <div class="configure-panel">
+                <div class="configure-panel">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
+                        <input type="button" class="btn btn-link" value="Update" />
+                    </div>
+                    <div class="usage-table-wrapper">
+                        <div class="table-report w-100">
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <th>Region</th>
+                                        <th>Monthly Industry
+                                            Avg. calls</th>
+                                        <th>Expected monthly
+                                            call per AC (Mins) </th>
+                                        <th>RAG</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data">
+                                            <td>{{item.region}}</td>
+                                            <td>{{item.avgCall}} mins</td>
+                                            <td>
+                                                <vfpricing-range-slider [currentValue]="item.avgCall"
+                                                    (valueChange)="updateValue(item, $event)">
+                                                </vfpricing-range-slider>
+                                            </td>
+                                            <td>
+                                                <div vfpricingRagIcon [currentValue]="item.avgCall">
+                                                    <span class="icon"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="MMS">
+            <div class="configure-panel">
+                <div class="configure-panel">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
+                        <input type="button" class="btn btn-link" value="Update" />
+                    </div>
+                    <div class="usage-table-wrapper">
+                        <div class="table-report w-100">
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <th>Region</th>
+                                        <th>Monthly Industry
+                                            Avg. calls</th>
+                                        <th>Expected monthly
+                                            call per AC (Mins) </th>
+                                        <th>RAG</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data">
+                                            <td>{{item.region}}</td>
+                                            <td>{{item.avgCall}} mins</td>
+                                            <td>
+                                                <vfpricing-range-slider [currentValue]="item.avgCall"
+                                                    (valueChange)="updateValue(item, $event)">
+                                                </vfpricing-range-slider>
+                                            </td>
+                                            <td>
+                                                <div vfpricingRagIcon [currentValue]="item.avgCall">
+                                                    <span class="icon"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="Data">
+            <div class="configure-panel">
+                <div class="configure-panel">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
+                        <input type="button" class="btn btn-link" value="Update" />
+                    </div>
+                    <div class="usage-table-wrapper">
+                        <div class="table-report w-100">
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <th>Region</th>
+                                        <th>Monthly Industry
+                                            Avg. calls</th>
+                                        <th>Expected monthly
+                                            call per AC (Mins) </th>
+                                        <th>RAG</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data">
+                                            <td>{{item.region}}</td>
+                                            <td>{{item.avgCall}} mins</td>
+                                            <td>
+                                                <vfpricing-range-slider [currentValue]="item.avgCall"
+                                                    (valueChange)="updateValue(item, $event)">
+                                                </vfpricing-range-slider>
+                                            </td>
+                                            <td>
+                                                <div vfpricingRagIcon [currentValue]="item.avgCall">
+                                                    <span class="icon"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="Roaming">
+            <div class="configure-panel">
+                <div class="configure-panel">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <input type="button" class="btn btn-link mr-3" value="Reset to Industry Avg." />
+                        <input type="button" class="btn btn-link" value="Update" />
+                    </div>
+                    <div class="usage-table-wrapper">
+                        <div class="table-report w-100">
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <th>Region</th>
+                                        <th>Monthly Industry
+                                            Avg. calls</th>
+                                        <th>Expected monthly
+                                            call per AC (Mins) </th>
+                                        <th>RAG</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data">
+                                            <td>{{item.region}}</td>
+                                            <td>{{item.avgCall}} mins</td>
+                                            <td>
+                                                <vfpricing-range-slider [currentValue]="item.avgCall"
+                                                    (valueChange)="updateValue(item, $event)">
+                                                </vfpricing-range-slider>
+                                            </td>
+                                            <td>
+                                                <div vfpricingRagIcon [currentValue]="item.avgCall">
+                                                    <span class="icon"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="Extra">
+            <div class="configure-panel w-50">
+                <div class="heading-add-ons">Add-ons</div>
+                <div class="add-on-panel">
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="row-group">
+                        <div class="w-35 value-section">Add-ons</div>
+                        <div class="w-10 value-section">
+                            <input type="text" class="control-box" placeholder="XXXX">
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center">
+                            Clear "Add-ons"
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Update "Add-ons"
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </tab>
+    </tabset>
+
+    <div class="usage-split-wrapper">
+        <div class="heading-info">
+            Usage Split
+        </div>
+        <div class="sub-text">
+            Your quote will be calculated based on the following “Energy & Utilities” usage average. Adjust the values
+            as required.
+        </div>
+        <div class="panel-boxes">
+            <accordion [isAnimated]="true">
+                <accordion-group panelClass="dark p0" (isOpenChange)="this.voiceAccordian = $event">
+                    <div class="panel-box-header" accordion-heading>
+                        Voice
+                        <span class="d-flex align-items-center">
+                            <img class="arrow-icon" [class.rotate-180]="!voiceAccordian"
+                                src="./assets/icons/arrow-up.svg">
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-heading">
+                            National (UK)
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                KPI
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            International
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                KPI
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            Roaming Incoming
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                KPI
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            Roaming Outgoing
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                KPI
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            Premium
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                KPI
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </accordion-group>
+            </accordion>
+        </div>
+        <div class="panel-boxes">
+            <accordion [isAnimated]="true">
+                <accordion-group panelClass="dark p0" (isOpenChange)="this.smsAccordian = $event">
+                    <div class="panel-box-header" accordion-heading>
+                        SMS
+                        <span class="d-flex align-items-center">
+                            <img class="arrow-icon" [class.rotate-180]="!smsAccordian"
+                                src="./assets/icons/arrow-up.svg">
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-heading">
+                            National (UK)
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Region
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            International
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Usage Type
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            Roaming
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Usage Type
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </accordion-group>
+            </accordion>
+        </div>
+        <div class="panel-boxes">
+            <accordion [isAnimated]="true">
+                <accordion-group panelClass="dark p0" (isOpenChange)="this.mmsAccordian = $event">
+                    <div class="panel-box-header" accordion-heading>
+                        MMS
+                        <span class="d-flex align-items-center">
+                            <img class="arrow-icon" [class.rotate-180]="!mmsAccordian"
+                                src="./assets/icons/arrow-up.svg">
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-heading">
+                            National (UK)
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Region
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            International
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Usage Type
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            Roaming
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Usage Type
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </accordion-group>
+            </accordion>
+        </div>
+        <div class="panel-boxes">
+            <accordion [isAnimated]="true">
+                <accordion-group panelClass="dark p0" (isOpenChange)="this.roamingAccordian= $event">
+                    <div class="panel-box-header" accordion-heading>
+                        Roaming
+                        <span class="d-flex align-items-center">
+                            <img class="arrow-icon" [class.rotate-180]="!roamingAccordian"
+                                src="./assets/icons/arrow-up.svg">
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-heading">
+                            National (UK)
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Region
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            International
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Usage Type
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-heading">
+                            Roaming
+                        </div>
+                        <div class="table-report d-flex align-items-center justify-content-center">
+                            <div class="usage-split-table-wrapper  w-50">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <table class="table">
+                                        <thead>
+                                            <th>
+                                                Usage Type
+                                            </th>
+                                            <th>
+                                                % Of Usage
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile to Landline (call)</td>
+                                                <td>20%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+</div>
