@@ -1,1 +1,35 @@
 @import '../configure.component.scss';
+
+.panel {
+    padding: 46px 30px;
+}
+
+
+.row-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.footer-section {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 3rem;
+}
+
+.add-on-panel {
+    padding: 0 25px;
+}
+
+.heading-add-ons {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 70px;
+}
+
+.value-section {
+    font-size: 18px;
+}
