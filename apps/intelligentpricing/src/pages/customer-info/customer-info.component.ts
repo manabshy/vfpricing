@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '@vfpricing/common';
 import { ConnectionType, Oportunity } from '@vfpricing/vf-enums';
 
-import { CustomerInfoService } from './customer-info.service';
+import { CustomerInfoService } from './service/customer-info.service';
 @Component({
   selector: 'vfpricing-customer-info',
   templateUrl: './customer-info.component.html',

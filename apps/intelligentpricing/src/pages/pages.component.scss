@@ -1,0 +1,37 @@
+@import '../../../../libs/themes/variables.scss';
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100% - $header-height + -1px);
+    position: relative;
+    .stepper-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 120px;
+    }
+
+    .scrolled {
+        width: 100%;
+        position: fixed;
+        top: -49px;
+        z-index: 986;
+        background: #fff;
+        box-shadow: 0px 2px 8px rgb(0 0 0 / 16%);
+        padding-top: 10px;
+        transition: background  0.2s;
+    }
+}
+
+.stepper-panel {
+    height: 100%;
+    width: 100%;
+    margin-top: 53px;
+}
+
+.expanded {
+    margin-top: 300px;
+}

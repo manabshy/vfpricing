@@ -1,0 +1,13 @@
+<vfpricing-layout>
+    <div class="layout">
+        <div class="stepper-wrapper" #stepperWrapper>
+            <vfpricing-stepper [selectedIndex]="this.selectedStep" [stepperConfig]="stepper" (clickEmit)="setStep($event)"></vfpricing-stepper>   
+        </div>
+        <div class="stepper-panel" #stepperPanel [ngSwitch]="selectedStep">
+            <vfpricing-customer-info *ngSwitchCase="0" (moveNext)="moveNext($event)"></vfpricing-customer-info>
+            <vfpricing-investment *ngSwitchCase="1"  (emitNext)="moveNext($event)"  (emitPrevious)="moveBack($event)"></vfpricing-investment>
+            <vfpricing-configure *ngSwitchCase="2" (emitNext)="moveNext($event)"  (emitPrevious)="moveBack($event)"></vfpricing-configure>
+            <vfpricing-tariff-recommendation  *ngSwitchCase="3" (emitPrevious)="moveBack($event)"></vfpricing-tariff-recommendation>
+        </div>
+    </div>
+</vfpricing-layout>

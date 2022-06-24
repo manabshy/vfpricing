@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { ReportConfig, ReportConfigService } from '@vfpricing/shared';
 
 @Injectable()
-export class CustomerInfoService {
+export class CustomerInfoMockService {
+
+  constructor(private service: ReportConfigService) {}
+
   mockVoiceTrendData = {
     dataSet: [
       { data: [55, 50, 55, 50, 55, 50, 40], label: 'Voice' },
@@ -58,9 +61,6 @@ export class CustomerInfoService {
     },
     isOpen: true,
   };
-
-
-  constructor(private service: ReportConfigService) {}
 
   getVoiceTrendData(): ReportConfig {
     return {

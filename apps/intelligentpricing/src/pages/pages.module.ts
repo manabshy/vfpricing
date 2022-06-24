@@ -10,8 +10,10 @@ import { MaterialModule } from '@vfpricing/material';
 import {
   AlertModule,
   ChartPanelModule,
+  LayoutModule,
   RangeSliderModule,
   ReportLayoutModule,
+  StepperModule,
 } from '@vfpricing/shared';
 import { NgChartsModule } from 'ng2-charts';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -19,17 +21,22 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
-import { ConfigureComponent } from './components/configure/configure.component';
-import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
-import { CustomerInfoService } from './components/customer-info/customer-info.service';
-import { NewCustomerComponent } from './components/customer-info/new-customer/new-customer.component';
-import { RenewCustomerComponent } from './components/customer-info/renew-customer/renew-customer.component';
-import { InvestmentComponent } from './components/investment/investment.component';
-import { TariffRecommendationComponent } from './components/tariff-recommendation/tariff-recommendation.component';
-import { NewInvestmentComponent } from './components/investment/new-investment/new-investment.component';
-import { RenewInvestmentComponent } from './components/investment/renew-investment/renew-investment.component';
-import { NewConfigureComponent } from './components/configure/new-configure/new-configure.component';
-import { RenewConfigureComponent } from './components/configure/renew-configure/renew-configure.component';
+import { ConfigureComponent } from './configure/configure.component';
+import { NewConfigureComponent } from './configure/new-configure/new-configure.component';
+import { RenewConfigureComponent } from './configure/renew-configure/renew-configure.component';
+import {
+  CustomerInfoAPIService,
+  CustomerInfoComponent,
+  CustomerInfoMockService,
+  CustomerInfoService,
+  NewCustomerComponent,
+  RenewCustomerComponent,
+} from './customer-info';
+import { InvestmentComponent } from './investment/investment.component';
+import { NewInvestmentComponent } from './investment/new-investment/new-investment.component';
+import { RenewInvestmentComponent } from './investment/renew-investment/renew-investment.component';
+import { PagesComponent } from './pages.component';
+import { TariffRecommendationComponent } from './tariff-recommendation/tariff-recommendation.component';
 
 const SharedComponent = [
   CustomerInfoComponent,
@@ -42,6 +49,7 @@ const SharedComponent = [
   RenewInvestmentComponent,
   NewConfigureComponent,
   RenewConfigureComponent,
+  PagesComponent,
 ];
 
 const Modules = [
@@ -62,8 +70,13 @@ const Modules = [
   imports: [
     CommonModule,
     AccordionModule.forRoot(),
+    StepperModule,
+    LayoutModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -78,6 +91,6 @@ const Modules = [
     AccordionModule,
     ModalModule,
   ],
-  providers: [CustomerInfoService],
+  providers: [CustomerInfoService, CustomerInfoAPIService, CustomerInfoMockService],
 })
-export class SharedModule {}
+export class PagesModule {}
