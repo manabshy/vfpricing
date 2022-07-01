@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   mock: true,
+  apiUrl: 'http//someApi.com',
+  version: '0.0.1'
 };
 
 /*

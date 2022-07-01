@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
+import { ICustomerInfo } from '@vfpricing/defination';
+import { Customer_Mock_Data } from '@vfpricing/mock-data';
 import { ReportConfig, ReportConfigService } from '@vfpricing/shared';
+import { of } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class CustomerInfoMockService {
@@ -62,8 +66,20 @@ export class CustomerInfoMockService {
     isOpen: true,
   };
 
-  getVoiceTrendData(): ReportConfig {
-    return {
+  getOpcoData(): Observable<string[]> {
+    return of(Customer_Mock_Data.Opco);
+  }
+
+  getIndustryByOpco(opco: string): Observable<string[]> {
+    return of(Customer_Mock_Data.Industries);
+  }
+
+  getCustomerDataByOpco(opco: string): Observable<ICustomerInfo[]> {
+    return of(Customer_Mock_Data.Customers);
+  }
+
+  getVoiceTrendData(): Observable<ReportConfig> {
+    return of({
       graphData: {
         chartData: {
           datasets: this.mockVoiceTrendData.dataSet,
@@ -103,11 +119,11 @@ export class CustomerInfoMockService {
           },
         ],
       },
-    };
+    });
   }
 
-  getDataTrend(): ReportConfig {
-    return {
+  getDataTrend(): Observable<ReportConfig> {
+    return of({
       graphData: {
         chartData: {
           datasets: this.mockDataTrendData.dataSet,
@@ -147,11 +163,11 @@ export class CustomerInfoMockService {
           },
         ],
       },
-    };
+    });
   }
 
-  getctnTrend(): ReportConfig {
-    return {
+  getctnTrend(): Observable<ReportConfig> {
+    return of({
       graphData: {
         chartData: {
           datasets: this.mockctnTrendData.dataSet,
@@ -191,11 +207,11 @@ export class CustomerInfoMockService {
           },
         ],
       },
-    };
+    });
   }
 
-  getSpendTrend(): ReportConfig {
-    return {
+  getSpendTrend(): Observable<ReportConfig> {
+    return of({
       graphData: {
         chartData: {
           datasets: this.mockSpendTrendData.dataSet,
@@ -235,6 +251,6 @@ export class CustomerInfoMockService {
           },
         ],
       },
-    };
+    });
   }
 }

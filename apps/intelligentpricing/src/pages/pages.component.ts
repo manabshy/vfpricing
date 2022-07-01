@@ -8,9 +8,10 @@ import { StepperConfig } from '@vfpricing/shared';
 })
 export class PagesComponent {
   title = 'intelligentpricing';
-  selectedStep = 3;
+  selectedStep = 0;
   @ViewChild('stepperWrapper') stepperWrapper!: ElementRef<HTMLElement>;
   @ViewChild('stepperPanel') stepperPanel!: ElementRef<HTMLElement>;
+  
   stepper: StepperConfig[] = [
     { label: 'Customer info', step: 0, checked: false },
     { label: 'Investment & Connections', step: 1, checked: false },

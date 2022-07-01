@@ -19,9 +19,9 @@
                                             Market
                                         </div>
                                         <div class="control">
-                                            <mat-select formControlName="market" >
-                                                <mat-option *ngFor="let market of markets" [value]="market.value">
-                                                    {{market.label}}</mat-option>
+                                            <mat-select formControlName="opco" >
+                                                <mat-option *ngFor="let opco of opcos" [value]="opco">
+                                                    {{opco}}</mat-option>
                                             </mat-select>
                                         </div>
                                     </div>
@@ -52,10 +52,10 @@
                             Select at least one account...
                         </div>
                         <ng-container *ngIf="form.valid && form.get('oportunity')?.value === oportunityEnum.New">
-                            <vfpricing-new-customer (emitForm)="isValidChildForms = $event"></vfpricing-new-customer>
+                            <vfpricing-new-customer [selectedOpco]="form.get('opco')?.value" (emitForm)="isValidChildForms = $event"></vfpricing-new-customer>
                         </ng-container>
                         <ng-container *ngIf="form.valid && form.get('oportunity')?.value === oportunityEnum.Renew">
-                            <vfpricing-renew-customer (emitForm)="isValidChildForms = $event">
+                            <vfpricing-renew-customer [selectedOpco]="form.get('opco')?.value" (emitForm)="isValidChildForms = $event">
                             </vfpricing-renew-customer>
                         </ng-container>
                     </div>
@@ -78,7 +78,7 @@
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Voice</div>
                                     <span class="d-flex align-items-center">
-                                        <img [class.rotate-180]="!this.voiceTrendData.isOpen"
+                                        <img [class.rotate-180]="!this.voiceTrendData?.isOpen"
                                             src="./assets/icons/arrow-up.svg">
                                     </span>
                                 </div>
@@ -92,7 +92,7 @@
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Data</div>
                                     <span class="d-flex align-items-center">
-                                        <img [class.rotate-180]="!this.dataTrend.isOpen"
+                                        <img [class.rotate-180]="!this.dataTrend?.isOpen"
                                             src="./assets/icons/arrow-up.svg">
                                     </span>
                                 </div>
@@ -106,7 +106,7 @@
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">CTNs</div>
                                     <span class="d-flex align-items-center">
-                                        <img [class.rotate-180]="!this.ctnTrend.isOpen"
+                                        <img [class.rotate-180]="!this.ctnTrend?.isOpen"
                                             src="./assets/icons/arrow-up.svg">
                                     </span>
                                 </div>
@@ -120,7 +120,7 @@
                                     accordion-heading type="button">
                                     <div class="pull-left heading-xl float-left">Spend</div>
                                     <span class="d-flex align-items-center">
-                                        <img [class.rotate-180]="!this.spendTrend.isOpen"
+                                        <img [class.rotate-180]="!this.spendTrend?.isOpen"
                                             src="./assets/icons/arrow-up.svg">
                                     </span>
                                 </div>

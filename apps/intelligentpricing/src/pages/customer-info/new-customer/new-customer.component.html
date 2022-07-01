@@ -13,10 +13,10 @@
                                     Vertical
                                 </div>
                                 <div class="control">
-                                    <mat-select formControlName="vertical">
+                                    <mat-select formControlName="industry">
                                         <mat-option value="">Select Vertical</mat-option>
-                                        <mat-option *ngFor="let vertical of verticals" [value]="vertical.value">
-                                            {{vertical.label}}</mat-option>
+                                        <mat-option *ngFor="let vertical of industry" [value]="vertical">
+                                            {{vertical}}</mat-option>
                                     </mat-select>
                                 </div>
                             </div>
