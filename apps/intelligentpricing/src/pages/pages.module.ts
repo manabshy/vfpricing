@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -25,9 +26,7 @@ import { ConfigureComponent } from './configure/configure.component';
 import { NewConfigureComponent } from './configure/new-configure/new-configure.component';
 import { RenewConfigureComponent } from './configure/renew-configure/renew-configure.component';
 import {
-  CustomerInfoAPIService,
   CustomerInfoComponent,
-  CustomerInfoMockService,
   CustomerInfoService,
   NewCustomerComponent,
   RenewCustomerComponent,
@@ -60,6 +59,7 @@ const Modules = [
   NgChartsModule,
   ReportLayoutModule,
   NgChartsModule,
+  HttpClientModule,
   TabsModule,
   ChartPanelModule,
   RangeSliderModule,
@@ -91,6 +91,6 @@ const Modules = [
     AccordionModule,
     ModalModule,
   ],
-  providers: [CustomerInfoService, CustomerInfoAPIService, CustomerInfoMockService],
+  providers: [CustomerInfoService],
 })
 export class PagesModule {}

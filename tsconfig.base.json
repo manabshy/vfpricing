@@ -19,7 +19,6 @@
       "@vfpricing/common": ["libs/common/src/index.ts"],
       "@vfpricing/defination": ["libs/defination/src/index.ts"],
       "@vfpricing/material": ["libs/material/src/index.ts"],
-      "@vfpricing/mock-data": ["libs/mock-data/src/index.ts"],
       "@vfpricing/shared": ["libs/shared/src/index.ts"],
       "@vfpricing/vf-enums": ["libs/vf-enums/src/index.ts"]
     }

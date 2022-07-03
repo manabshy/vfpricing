@@ -4,8 +4,7 @@ import { CommonService } from '@vfpricing/common';
 import { ConnectionType, Oportunity } from '@vfpricing/vf-enums';
 import { Subject, takeUntil } from 'rxjs';
 
-import { CustomerInfoService } from './service/customer-info.service';
-
+import { CustomerInfoService } from '../customer-info/service/customer-info.service';
 @Component({
   selector: 'vfpricing-customer-info',
   templateUrl: './customer-info.component.html',
