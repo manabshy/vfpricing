@@ -76,10 +76,13 @@ export class CustomerInfoService {
     return this.httpClient.get<string[]>(`${environment.apiUrl}/${environment.version}/industry?opco=${opco}`);
   }
 
-  getCustomerDataByOpco(opco: string): Observable<ICustomerInfo[]> {
-    return this.httpClient.get<ICustomerInfo[]>(`${environment.apiUrl}/${environment.version}/ban?opco=${opco}`);
+  getCustomerDataByOpco(opco: string, accountName: string): Observable<ICustomerInfo[]> {
+    let url = `ban?opco=${opco}`;
+    if(accountName) {
+      url = `${url}&account_name=${accountName}`;
+    }
+    return this.httpClient.get<ICustomerInfo[]>(`${environment.apiUrl}/${environment.version}/${url}`);
   }
-
 
   getVoiceTrendData(): Observable<ReportConfig> {
     return of({

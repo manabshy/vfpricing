@@ -33,6 +33,22 @@
             "global_account_name": "Vodafone",
             "industry": "Telco",
             "opco": "ES"
+        },
+        {
+            "billing_account_number": "A00000003",
+            "customer_name": "Vodafone DE - 24 mths",
+            "global_account_number": 4,
+            "global_account_name": "Vodafone",
+            "industry": "Telco",
+            "opco": "DE"
+        },
+        {
+            "billing_account_number": "A00000004",
+            "customer_name": "Vodafone DE - 12 mths",
+            "global_account_number": 3,
+            "global_account_name": "Vodafone",
+            "industry": "Telco",
+            "opco": "DE"
         }
     ]
 }
