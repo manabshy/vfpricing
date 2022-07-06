@@ -34,6 +34,7 @@ import {
 import { InvestmentComponent } from './investment/investment.component';
 import { NewInvestmentComponent } from './investment/new-investment/new-investment.component';
 import { RenewInvestmentComponent } from './investment/renew-investment/renew-investment.component';
+import { InvestmentService } from './investment/service/investment.service';
 import { PagesComponent } from './pages.component';
 import { TariffRecommendationComponent } from './tariff-recommendation/tariff-recommendation.component';
 
@@ -91,6 +92,6 @@ const Modules = [
     AccordionModule,
     ModalModule,
   ],
-  providers: [CustomerInfoService],
+  providers: [CustomerInfoService, InvestmentService],
 })
 export class PagesModule {}

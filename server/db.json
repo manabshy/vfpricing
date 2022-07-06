@@ -50,5 +50,6 @@
             "industry": "Telco",
             "opco": "DE"
         }
-    ]
+    ],
+    "currency": ["EUR"]
 }

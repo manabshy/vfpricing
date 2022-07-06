@@ -1,7 +1,14 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { CommonService } from '@vfpricing/common';
 import { ConnectionType } from '@vfpricing/vf-enums';
 import { Subject, takeUntil } from 'rxjs';
+import { InvestmentService } from './service/investment.service';
 
 @Component({
   selector: 'vfpricing-investment',
@@ -9,20 +16,7 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./investment.component.scss'],
 })
 export class InvestmentComponent implements OnInit, OnDestroy {
-  contractLength = [
-    {
-      label: '24 months',
-      value: 24,
-    },
-    {
-      label: '11 months',
-      value: 11,
-    },
-    {
-      label: '10 months',
-      value: 10,
-    },
-  ];
+  contractLength: string[] = [];
 
   selectedContract = 24;
   connectionEnum = ConnectionType;
@@ -31,13 +25,25 @@ export class InvestmentComponent implements OnInit, OnDestroy {
   @Output() emitNext = new EventEmitter();
   @Output() emitPrevious = new EventEmitter();
 
-  constructor(private commonService: CommonService) {}
-  
+  constructor(
+    private commonService: CommonService,
+    private investmentService: InvestmentService
+  ) {}
 
   ngOnInit(): void {
     this.commonService.connectionType
       .pipe(takeUntil(this.destroy$))
       .subscribe((value) => (this.connectionType = value));
+
+      this.getContracts();
+  }
+
+  getContracts(): void {
+    this.investmentService.getContracts()
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(response => {
+      this.contractLength = response;
+    })
   }
 
   moveBack() {

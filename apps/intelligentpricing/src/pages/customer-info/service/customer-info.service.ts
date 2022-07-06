@@ -76,6 +76,10 @@ export class CustomerInfoService {
     return this.httpClient.get<string[]>(`${environment.apiUrl}/${environment.version}/industry?opco=${opco}`);
   }
 
+  getCurrencyByOpco(opco: string): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${environment.apiUrl}/${environment.version}/currency?opco=${opco}`);
+  }
+
   getCustomerDataByOpco(opco: string, accountName: string): Observable<ICustomerInfo[]> {
     let url = `ban?opco=${opco}`;
     if(accountName) {
