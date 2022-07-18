@@ -43,7 +43,7 @@ export class CustomerInfoComponent implements OnInit, OnDestroy {
       .getOpcoData()
       .pipe(takeUntil(this.subscription))
       .subscribe((response) => {
-        this.form.patchValue({ opco: response[0] });
+        this.form.patchValue({ opco: response[0].id });
         this.opcos = response;
       });
   }
