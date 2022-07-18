@@ -20,8 +20,8 @@
                                         </div>
                                         <div class="control">
                                             <mat-select formControlName="opco" >
-                                                <mat-option *ngFor="let opco of opcos" [value]="opco">
-                                                    {{opco}}</mat-option>
+                                                <mat-option *ngFor="let opco of opcos" [value]="opco.id">
+                                                    {{opco.name}}</mat-option>
                                             </mat-select>
                                         </div>
                                     </div>

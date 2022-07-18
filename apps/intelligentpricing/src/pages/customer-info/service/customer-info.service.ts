@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICustomerInfo } from '@vfpricing/defination';
+import { ICustomerInfo, IOpco } from '@vfpricing/defination';
 import { ReportConfig, ReportConfigService } from '@vfpricing/shared';
 import { of } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
@@ -68,8 +68,8 @@ export class CustomerInfoService {
     isOpen: true,
   };
 
-  getOpcoData(): Observable<string[]> {
-    return this.httpClient.get<string[]>(`${environment.apiUrl}/${environment.version}/opco`);
+  getOpcoData(): Observable<IOpco[]> {
+    return this.httpClient.get<IOpco[]>(`${environment.apiUrl}/${environment.version}/opco`);
   }
 
   getIndustryByOpco(opco: string): Observable<string[]> {

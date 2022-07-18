@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '@vfpricing/common';
+import { IOpco } from '@vfpricing/defination';
 import { ConnectionType, Oportunity } from '@vfpricing/vf-enums';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -18,7 +19,7 @@ export class CustomerInfoComponent implements OnInit, OnDestroy {
   ctnTrend!: any;
   spendTrend!: any;
 
-  opcos: string[] = [];
+  opcos: IOpco[] = [];
   isValidChildForms = false;
   oportunityEnum = Oportunity;
   subscription = new Subject();

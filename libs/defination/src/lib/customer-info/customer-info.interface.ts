@@ -7,3 +7,9 @@ export interface ICustomerInfo {
   opco: string;
   checked?: boolean;
 }
+
+
+export interface IOpco {
+ id: string;
+ name: string;
+}
