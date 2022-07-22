@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/cor
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '@vfpricing/common';
 import { IOpco } from '@vfpricing/defination';
+import { ReportConfig } from '@vfpricing/shared';
 import { ConnectionType, Oportunity } from '@vfpricing/vf-enums';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -14,11 +15,8 @@ import { CustomerInfoService } from '../customer-info/service/customer-info.serv
 export class CustomerInfoComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   isOpen!: boolean;
-  voiceTrendData!: any;
-  dataTrend!: any;
-  ctnTrend!: any;
-  spendTrend!: any;
 
+  usageData!: ReportConfig[];
   opcos: IOpco[] = [];
   isValidChildForms = false;
   oportunityEnum = Oportunity;
@@ -50,24 +48,9 @@ export class CustomerInfoComponent implements OnInit, OnDestroy {
 
   getTrendData(): void {
     this.service
-      .getVoiceTrendData()
+      .getUsageData()
       .pipe(takeUntil(this.subscription))
-      .subscribe((response) => (this.voiceTrendData = response));
-
-    this.service
-      .getDataTrend()
-      .pipe(takeUntil(this.subscription))
-      .subscribe((response) => (this.dataTrend = response));
-
-    this.service
-      .getctnTrend()
-      .pipe(takeUntil(this.subscription))
-      .subscribe((response) => (this.ctnTrend = response));
-
-    this.service
-      .getSpendTrend()
-      .pipe(takeUntil(this.subscription))
-      .subscribe((response) => (this.spendTrend = response));
+      .subscribe((response) => (this.usageData = response));
   }
 
   initForm(): void {

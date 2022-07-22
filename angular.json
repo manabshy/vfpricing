@@ -9,6 +9,7 @@
     "material": "libs/material",
     "shared": "libs/shared",
     "shared-e2e": "apps/shared-e2e",
+    "vf-config-db": "libs/vf-config-db",
     "vf-enums": "libs/vf-enums"
   }
 }

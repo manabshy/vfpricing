@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/vf-config-db",
+  "sourceRoot": "libs/vf-config-db/src",
+  "prefix": "vfpricing",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/vf-config-db/src/**/*.ts",
+          "libs/vf-config-db/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -74,338 +74,248 @@
     ],
     "ban-profile": [
         {
-            "type": "Devices",
-            "description": "Data",
+            "type": "Voice",
             "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
             ],
-            "value": [
-                38,
-                40,
-                38,
-                146
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
             ],
-            "value_type": "Profile"
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
         },
         {
-            "type": "Devices",
-            "description": "Data and Voice",
+            "type": "Trend",
             "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
             ],
-            "value": [
-                256,
-                256,
-                257,
-                21
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
             ],
-            "value_type": "Profile"
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
         },
         {
-            "type": "Devices",
-            "description": "Voice",
+            "type": "CTNs",
             "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
             ],
-            "value": [
-                59,
-                79,
-                46,
-                9
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
             ],
-            "value_type": "Profile"
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
         },
         {
-            "type": "Usage",
-            "description": "Data National",
+            "type": "Spend",
             "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
             ],
-            "value": [
-                229231431,
-                182160312,
-                268682046,
-                8608062
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
             ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Data Roaming",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                32033541,
-                28826370,
-                79518861,
-                524547
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "MMS National National MMS to Vodafone mobiles",
-            "date": [
-                "2018-02-28",
-                "2018-03-31"
-            ],
-            "value": [
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "MMS Roaming",
-            "date": [
-                "2018-01-31",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                0,
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Roaming days",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                981,
-                549,
-                888,
-                36
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "SMS International",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "SMS National National SMS to Other networks",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "SMS National National SMS to Vodafone mobiles",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "SMS Premium",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "SMS Roaming",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                0,
-                0,
-                0,
-                0
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice International",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                2300.1,
-                2514.05,
-                1965.9,
-                62.35
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice National Mobile to Landline (National Calls)",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                17198.45,
-                18768.5,
-                16260.45,
-                228.7
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice National Mobile to Other Operator (Cross Network Calls)",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                5483.25,
-                6447.4,
-                6390.2,
-                103.85
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice National Mobile to Same Operator Mobile",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                8991.45,
-                10005.75,
-                9983.55,
-                156.4
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice Premium",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                415.5,
-                627.4,
-                349.25,
-                1.65
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice Roaming Incoming",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                1563.4,
-                979.15,
-                1768,
-                165.1
-            ],
-            "value_type": "Profile"
-        },
-        {
-            "type": "Usage",
-            "description": "Voice Roaming Outgoing",
-            "date": [
-                "2018-01-31",
-                "2018-02-28",
-                "2018-03-31",
-                "2018-04-30"
-            ],
-            "value": [
-                2411.25,
-                1238.6,
-                2497.1,
-                15.7
-            ],
-            "value_type": "Profile"
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
         }
     ],
     "currency": [
