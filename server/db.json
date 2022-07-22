@@ -1,0 +1,324 @@
+{
+    "contract-terms": [
+        12,
+        24,
+        36
+    ],
+    "opco": [
+        {
+            "name": "Germany",
+            "id": "DE"
+        },
+        {
+            "name": "Spain",
+            "id": "ES"
+        },
+        {
+            "name": "Hungary",
+            "id": "HU"
+        },
+        {
+            "name": "Ireland",
+            "id": "IE"
+        },
+        {
+            "name": "Netherlands",
+            "id": "NL"
+        },
+        {
+            "name": "Portugal",
+            "id": "PT"
+        },
+        {
+            "name": "United Kingdom",
+            "id": "UK"
+        }
+    ],
+    "industry": [
+        "Energy",
+        "Consumer Goods"
+    ],
+    "ban": [
+        {
+            "billing_account_number": "A00000000",
+            "customer_name": "Vodafone Spain - 12 mths",
+            "global_account_number": 1,
+            "global_account_name": "Vodafone",
+            "industry": "Telco",
+            "opco": "ES"
+        },
+        {
+            "billing_account_number": "A00000001",
+            "customer_name": "Vodafone Spain - 24 mths",
+            "global_account_number": 2,
+            "global_account_name": "Vodafone",
+            "industry": "Telco",
+            "opco": "ES"
+        },
+        {
+            "billing_account_number": "A00000003",
+            "customer_name": "Vodafone DE - 24 mths",
+            "global_account_number": 4,
+            "global_account_name": "Vodafone",
+            "industry": "Telco",
+            "opco": "DE"
+        },
+        {
+            "billing_account_number": "A00000004",
+            "customer_name": "Vodafone DE - 12 mths",
+            "global_account_number": 3,
+            "global_account_name": "Vodafone",
+            "industry": "Telco",
+            "opco": "DE"
+        }
+    ],
+    "ban-profile": [
+        {
+            "type": "Voice",
+            "date": [
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
+            ],
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
+            ],
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
+        },
+        {
+            "type": "Trend",
+            "date": [
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
+            ],
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
+            ],
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
+        },
+        {
+            "type": "CTNs",
+            "date": [
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
+            ],
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
+            ],
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
+        },
+        {
+            "type": "Spend",
+            "date": [
+                "2018-01-02",
+                "2018-02-03",
+                "2018-03-04",
+                "2018-04-05"
+            ],
+            "trend": [
+                {
+                    "type": "Voice",
+                    "value": [
+                        12,
+                        283,
+                        364,
+                        999
+                    ]
+                },
+                {
+                    "type": "National",
+                    "value": [
+                        420,
+                        889,
+                        812,
+                        383
+                    ]
+                },
+                {
+                    "type": "Roaming",
+                    "value": [
+                        123,
+                        284,
+                        324,
+                        929
+                    ]
+                }
+            ],
+            "summary": [
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "UP"
+                },
+                {
+                    "type": "International",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "-32%",
+                    "diff": "DOWN"
+                },
+                {
+                    "type": "National",
+                    "annual": "200 mins",
+                    "3months": "400mins",
+                    "change": "+32%",
+                    "diff": "NO_CHANGE"
+                }
+            ]
+        }
+    ],
+    "currency": [
+        "EUR"
+    ]
+}

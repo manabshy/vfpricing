@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
-import { StepperConfig } from '@vfpricing/shared';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'vfpricing-root',

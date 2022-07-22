@@ -84,8 +84,8 @@
                                         <div class="control">
                                             <mat-select [(ngModel)]="selectedContract">
                                                 <mat-option *ngFor="let contract of contractLength"
-                                                    [value]="contract.value">
-                                                    {{contract.label}}</mat-option>
+                                                    [value]="contract">
+                                                    {{contract}}</mat-option>
                                             </mat-select>
                                         </div>
                                     </div>

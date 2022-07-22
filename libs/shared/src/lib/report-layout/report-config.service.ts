@@ -1,4 +1,5 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { ILabels } from '@vfpricing/defination';
 import { ChartOptions } from 'chart.js';
 
 @Injectable({ providedIn: 'root' })
@@ -59,17 +60,13 @@ export class ReportConfigService {
     return this._chartConfig.plugins;
   }
 
-  setScaleTitles(
-    xTitle: string,
-    yTitle: string,
-    graphTile: string
-  ): ChartOptions {
+  setScaleTitles(data: ILabels): ChartOptions {
     return {
       scales: {
         y: {
           title: {
             display: true,
-            text: yTitle,
+            text: data.y,
             color: '#00000',
             padding: 10,
             font: {
@@ -81,7 +78,7 @@ export class ReportConfigService {
         x: {
           title: {
             display: true,
-            text: xTitle,
+            text: data.x,
             color: '#00000',
             padding: 10,
             font: {
@@ -94,7 +91,7 @@ export class ReportConfigService {
       plugins: {
         title: {
           display: true,
-          text: graphTile,
+          text: data.title,
           color: '#00000',
           font: {
             size: 24,

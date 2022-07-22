@@ -3,11 +3,13 @@
   "projects": {
     "assets": "libs/assets",
     "common": "libs/common",
+    "defination": "libs/defination",
     "intelligentpricing": "apps/intelligentpricing",
     "intelligentpricing-e2e": "apps/intelligentpricing-e2e",
     "material": "libs/material",
     "shared": "libs/shared",
     "shared-e2e": "apps/shared-e2e",
+    "vf-config-db": "libs/vf-config-db",
     "vf-enums": "libs/vf-enums"
   }
 }

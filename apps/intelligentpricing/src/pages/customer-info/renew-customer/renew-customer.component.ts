@@ -1,34 +1,77 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ICustomerInfo } from '@vfpricing/defination';
 import { Oportunity } from '@vfpricing/vf-enums';
+import { debounceTime, of, Subject, switchMap, takeUntil } from 'rxjs';
+import { CustomerInfoService } from '../service/customer-info.service';
 
 @Component({
   selector: 'vfpricing-renew-customer',
   templateUrl: './renew-customer.component.html',
-  styleUrls: ['./renew-customer.component.scss']
+  styleUrls: ['./renew-customer.component.scss'],
 })
-export class RenewCustomerComponent {
+export class RenewCustomerComponent implements OnChanges, OnDestroy {
   oportunityEnum = Oportunity;
-  selected: any[] = [];
+  selectedCustomers: ICustomerInfo[] = [];
+  customer: ICustomerInfo[] = [];
+  destroy$ = new Subject();
+  accountName = new FormControl();
+  @Input() selectedOpco!: string;
   @Output() emitForm = new EventEmitter();
 
-  multiSelect = [
-    { value: 'Loreum 1', checked: false },
-    { value: 'Loreum 2', checked: false },
-    { value: 'Loreum 3', checked: false },
-    { value: 'Loreum 4', checked: false },
-  ];
+  constructor(private service: CustomerInfoService) {}
 
-  updateAllComplete(value: any) {
-    const hasValue = this.selected.findIndex(
-      (item) => item.value === value.value
-    );
-    if (hasValue >= 0) {
-      this.selected.splice(hasValue, 1);
-    } else {
-      this.selected.push(value);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (
+      changes['selectedOpco']?.currentValue !==
+      changes['selectedOpco']?.previousValue
+    ) {
+      this.getCustomerData();
     }
-
-    this.emitForm.emit(!!this.selected.length);
   }
 
+  getCustomerData(): void {
+    this.accountName.valueChanges
+      .pipe(
+        takeUntil(this.destroy$),
+        debounceTime(500),
+        switchMap((term) => {
+          this.customer = [];
+          if(term) {
+            return this.service.getCustomerDataByOpco(this.selectedOpco, term);
+          } else {
+            return of([]);
+          }
+        })
+      )
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((response) => {
+        this.customer = response;
+      });
+  }
+
+  updateAllComplete(value: ICustomerInfo): void {
+    const hasValue = this.selectedCustomers.findIndex(
+      (item) => item.billing_account_number === value.billing_account_number
+    );
+    if (hasValue >= 0) {
+      this.selectedCustomers.splice(hasValue, 1);
+    } else {
+      this.selectedCustomers.push(value);
+    }
+    this.emitForm.emit(!!this.selectedCustomers.length);
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(null);
+    this.destroy$.complete();
+  }
 }

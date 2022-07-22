@@ -8,19 +8,21 @@
         <div class="table-wrapper">
             <table class="table">
                 <thead>
-                    <th *ngFor="let col of config.tableData?.column">{{col}}</th>
+                    <th *ngFor="let col of config.tableData?.column">{{col.label}}</th>
                 </thead>
                 <tbody>
                     <ng-container>
                         <tr *ngFor="let row of config.tableData.rowData">
-                            <td *ngFor="let col of config.tableData.column">
-                                <div class="d-flex align-items-center" *ngIf="col === 'change (%)'"> {{row[col]}}
-                                    <img class="status-icons ml-2" *ngIf="row.status === 0" src="./assets/icons/arrow-up-sign.svg">
-                                    <img class="status-icons ml-2" *ngIf="row.status === 1" src="./assets/icons/arrow-down-sign.svg">
-                                    <img class="status-icons ml-2" *ngIf="row.status === 2" src="./assets/icons/minus.svg">
-                                </div>
-                                <div *ngIf="col !== 'change (%)'"> {{row[col]}}</div>
-                            </td>
+                            <ng-container *ngFor="let col of config.tableData.column">
+                                <td *ngIf="col.label">
+                                    <div class="d-flex align-items-center" *ngIf="col.attribute === 'change'"> {{row[col.attribute]}}
+                                        <img class="status-icons ml-2" *ngIf="row.diff === 'UP'" src="./assets/icons/arrow-up-sign.svg">
+                                        <img class="status-icons ml-2" *ngIf="row.diff === 'DOWN'" src="./assets/icons/arrow-down-sign.svg">
+                                        <img class="status-icons ml-2" *ngIf="row.diff === 'NO_CHANGE'" src="./assets/icons/minus.svg">
+                                    </div>
+                                    <div *ngIf="col.attribute !== 'change'"> {{row[col.attribute]}}</div>
+                                </td>
+                            </ng-container>
                         </tr>
                     </ng-container>
                 </tbody>

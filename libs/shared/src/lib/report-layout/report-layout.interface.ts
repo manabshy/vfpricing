@@ -1,6 +1,8 @@
 import { ChartConfiguration, ChartType } from 'chart.js';
 
 export interface ReportConfig {
+  type: string;
+  isOpen: boolean;
   graphData: {
     labels: string[];
     chartData: Partial<ChartConfiguration['data']>;
@@ -9,7 +11,7 @@ export interface ReportConfig {
     chartType: ChartType;
   };
   tableData: {
-    column: string[];
+    column: any[];
     rowData: any[];
   };
 }

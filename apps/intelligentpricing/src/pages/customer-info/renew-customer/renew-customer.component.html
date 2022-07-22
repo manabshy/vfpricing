@@ -10,30 +10,28 @@
                         Search
                     </div>
                     <div class="control position-relative">
-                        <div class="btn-group w-100 position-relative d-flex flex-column" dropdown
-                            #dropdown="bs-dropdown" [insideClick]="true">
-                            <div dropdownToggle class="control-box">
-                                <span class="placeholder" *ngIf="!selected?.length"> Name, Account
-                                    No,...</span>
-                                <span class="selected-value" *ngIf="selected?.length">
-                                    {{selected?.length}} Account Selected</span>
-                            </div>
-                            <span class="search-box">
-                                <img src="./assets/icons/search.svg">
-                            </span>
-                            <ul id="dropdown-triggers-manual w-100" *dropdownMenu class="dropdown-menu" role="menu"
-                                aria-labelledby="button-triggers-manual">
-                                <li *ngFor="let data of multiSelect" >
-                                    <mat-checkbox [ngModelOptions]="{standalone: true}"
-                                        (ngModelChange)="updateAllComplete(data)" [(ngModel)]="data.checked">
-                                        {{data.value}}
-                                    </mat-checkbox>
-                                </li>
-                            </ul>
+
+                        <div class="btn-group w-100 position-relative d-flex flex-column">
+                                <input type="text" class="control-box" placeholder="Name, Account No,.." aria-label="Number"
+                                     [formControl]="accountName" [matAutocomplete]="auto">
+                                     <span class="search-box">
+                                        <img src="./assets/icons/search.svg">
+                                    </span>
+                                     <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let data of customer">
+                                        <mat-checkbox 
+                                            [ngModelOptions]="{standalone: true}"
+                                            (click)="$event.stopPropagation()"
+                                            (ngModelChange)="updateAllComplete(data)" 
+                                            [(ngModel)]="data.checked">
+                                            {{data.customer_name}}
+                                        </mat-checkbox>
+                                    </mat-option>
+                                </mat-autocomplete>
                             <div>
-                                <div (click)="updateAllComplete(select)" *ngFor="let select of selected"
+                                <div (click)="updateAllComplete(select)" *ngFor="let select of selectedCustomers"
                                     class="selected-chips">
-                                    {{select.value}}
+                                    {{select.customer_name}}
                                     <img role="button" src="./assets/icons/cross.svg" />
                                 </div>
                             </div>
@@ -51,7 +49,6 @@
                         </vfpricing-alert>
                     </div>
                 </div>
-
             </div>
         </form>
     </div>

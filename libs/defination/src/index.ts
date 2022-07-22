@@ -1,0 +1,1 @@
+export * from './lib/customer-info/customer-info.interface';

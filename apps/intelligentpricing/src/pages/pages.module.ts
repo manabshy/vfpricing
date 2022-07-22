@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -25,9 +26,7 @@ import { ConfigureComponent } from './configure/configure.component';
 import { NewConfigureComponent } from './configure/new-configure/new-configure.component';
 import { RenewConfigureComponent } from './configure/renew-configure/renew-configure.component';
 import {
-  CustomerInfoAPIService,
   CustomerInfoComponent,
-  CustomerInfoMockService,
   CustomerInfoService,
   NewCustomerComponent,
   RenewCustomerComponent,
@@ -35,6 +34,7 @@ import {
 import { InvestmentComponent } from './investment/investment.component';
 import { NewInvestmentComponent } from './investment/new-investment/new-investment.component';
 import { RenewInvestmentComponent } from './investment/renew-investment/renew-investment.component';
+import { InvestmentService } from './investment/service/investment.service';
 import { PagesComponent } from './pages.component';
 import { TariffRecommendationComponent } from './tariff-recommendation/tariff-recommendation.component';
 
@@ -60,6 +60,7 @@ const Modules = [
   NgChartsModule,
   ReportLayoutModule,
   NgChartsModule,
+  HttpClientModule,
   TabsModule,
   ChartPanelModule,
   RangeSliderModule,
@@ -91,6 +92,6 @@ const Modules = [
     AccordionModule,
     ModalModule,
   ],
-  providers: [CustomerInfoService, CustomerInfoAPIService, CustomerInfoMockService],
+  providers: [CustomerInfoService, InvestmentService],
 })
 export class PagesModule {}
