@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AlertModule, ChartPanelModule } from '@vfpricing/shared';
 
 import { TariffRecommendationComponent } from './tariff-recommendation.component';
 
@@ -8,6 +10,7 @@ describe('TariffRecommendationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatCheckboxModule, AlertModule, ChartPanelModule],
       declarations: [ TariffRecommendationComponent ]
     })
     .compileComponents();

@@ -1,14 +1,18 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AlertModule } from '@vfpricing/shared';
 
 import { ConfigureComponent } from './configure.component';
 
-describe('ConfigureComponent', () => {
+fdescribe('ConfigureComponent', () => {
   let component: ConfigureComponent;
   let fixture: ComponentFixture<ConfigureComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfigureComponent ]
+      imports: [AlertModule],
+      declarations: [ ConfigureComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });

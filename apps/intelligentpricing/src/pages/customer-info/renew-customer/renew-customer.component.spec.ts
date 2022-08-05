@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CustomerInfoService } from '../service/customer-info.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RenewCustomerComponent } from './renew-customer.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AlertModule } from '@vfpricing/shared';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('RenewCustomerComponent', () => {
   let component: RenewCustomerComponent;
@@ -8,9 +12,11 @@ describe('RenewCustomerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RenewCustomerComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, MatAutocompleteModule, AlertModule, FormsModule,
+        ReactiveFormsModule,],
+      declarations: [RenewCustomerComponent],
+      providers: [CustomerInfoService],
+    }).compileComponents();
   });
 
   beforeEach(() => {

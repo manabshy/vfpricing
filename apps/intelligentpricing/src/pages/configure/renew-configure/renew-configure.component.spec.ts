@@ -1,4 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { RenewConfigureComponent } from './renew-configure.component';
 
@@ -8,7 +10,9 @@ describe('RenewConfigureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RenewConfigureComponent ]
+      imports: [TabsModule],
+      declarations: [ RenewConfigureComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   });

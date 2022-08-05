@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AlertModule } from '@vfpricing/shared';
 
 import { NewInvestmentComponent } from './new-investment.component';
 
-describe('NewInvestmentComponent', () => {
+fdescribe('NewInvestmentComponent', () => {
   let component: NewInvestmentComponent;
   let fixture: ComponentFixture<NewInvestmentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewInvestmentComponent ]
+      declarations: [ NewInvestmentComponent ],
+      imports: [AlertModule]
     })
     .compileComponents();
   });
