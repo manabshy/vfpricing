@@ -3,7 +3,7 @@ import { AlertModule } from '@vfpricing/shared';
 
 import { NewInvestmentComponent } from './new-investment.component';
 
-fdescribe('NewInvestmentComponent', () => {
+describe('NewInvestmentComponent', () => {
   let component: NewInvestmentComponent;
   let fixture: ComponentFixture<NewInvestmentComponent>;
 

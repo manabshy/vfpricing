@@ -1,5 +1,4 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const { compilerOptions } = require('../../tsconfig.base.json');
+
 module.exports = {
   displayName: "intelligentpricing",
   preset: '../../jest.preset.js',

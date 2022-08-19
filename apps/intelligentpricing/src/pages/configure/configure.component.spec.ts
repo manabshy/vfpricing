@@ -4,7 +4,7 @@ import { AlertModule } from '@vfpricing/shared';
 
 import { ConfigureComponent } from './configure.component';
 
-fdescribe('ConfigureComponent', () => {
+describe('ConfigureComponent', () => {
   let component: ConfigureComponent;
   let fixture: ComponentFixture<ConfigureComponent>;
 
@@ -25,5 +25,17 @@ fdescribe('ConfigureComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should move back', () => {
+    const spy = jest.spyOn(component.emitPrevious, 'emit');
+    component.moveBack();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should movenext', () => {
+    const spy = jest.spyOn(component.emitNext, 'emit');
+    component.moveNext();
+    expect(spy).toHaveBeenCalled();
   });
 });

@@ -26,4 +26,35 @@ describe('PagesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set selectedStep wiht updated value', () => {
+    const mockStepper =  {
+      checked: false,
+      label: 'mockLabel',
+      step: 0,
+      disabled: false,
+    };
+    component.setStep(mockStepper);
+    expect(component.selectedStep).toEqual(mockStepper.step);
+  });
+
+  it('should move next', () => {
+    component.moveNext(1);
+    expect(component.selectedStep).toBe(2);
+    expect(component.stepper[1].checked).toBe(true);
+  });
+
+  it('should move back', () => {
+    component.moveBack(2);
+    expect(component.selectedStep).toBe(1);
+  });
+
+  it('should move back', () => {
+    jest.spyOn(document.body, 'getBoundingClientRect').mockReturnValue({ top: -40 } as any)
+    component.scrollHandler();
+    expect(component.stepperPanel.nativeElement.classList.contains('expanded')).toBe(true);
+    jest.spyOn(document.body, 'getBoundingClientRect').mockReturnValue({ top: 0 } as any)
+    component.scrollHandler();
+    expect(component.stepperPanel.nativeElement.classList.contains('expanded')).toBe(false);
+  });
 });

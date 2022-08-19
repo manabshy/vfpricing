@@ -17,7 +17,6 @@ import { InvestmentService } from './service/investment.service';
 })
 export class InvestmentComponent implements OnInit, OnDestroy {
   contractLength: string[] = [];
-
   selectedContract = 24;
   connectionEnum = ConnectionType;
   connectionType!: ConnectionType | null;

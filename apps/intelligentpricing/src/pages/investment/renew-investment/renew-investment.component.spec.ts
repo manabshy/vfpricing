@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RenewInvestmentComponent } from './renew-investment.component';
 import { NgChartsModule } from 'ng2-charts';
 
-xdescribe('RenewInvestmentComponent', () => {
+describe('RenewInvestmentComponent', () => {
   let component: RenewInvestmentComponent;
   let fixture: ComponentFixture<RenewInvestmentComponent>;
 

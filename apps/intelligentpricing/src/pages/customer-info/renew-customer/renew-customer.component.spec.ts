@@ -6,7 +6,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AlertModule } from '@vfpricing/shared';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-describe('RenewCustomerComponent', () => {
+fdescribe('RenewCustomerComponent', () => {
   let component: RenewCustomerComponent;
   let fixture: ComponentFixture<RenewCustomerComponent>;
 

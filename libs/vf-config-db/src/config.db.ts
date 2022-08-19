@@ -51,3 +51,11 @@ export const VF_CONFIG_DB = {
     },
   ],
 };
+
+
+export const Stepper_const = [
+  { label: 'Customer info', step: 0, checked: false },
+  { label: 'Investment & Connections', step: 1, checked: false },
+  { label: 'Configure', step: 2, checked: false },
+  { label: 'Tariff Recommendation', step: 3, checked: false },
+];

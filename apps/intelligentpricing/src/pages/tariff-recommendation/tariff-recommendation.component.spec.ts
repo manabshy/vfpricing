@@ -25,4 +25,10 @@ describe('TariffRecommendationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should movenext', () => {
+    const spy = jest.spyOn(component.emitPrevious, 'emit');
+    component.moveBack();
+    expect(spy).toHaveBeenCalled();
+  });
 });

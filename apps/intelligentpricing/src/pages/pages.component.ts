@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { StepperConfig } from '@vfpricing/shared';
+import { Stepper_const } from '@vfpricing/vf-config-db';
 
 @Component({
   selector: 'vfpricing-pages',
@@ -7,17 +8,11 @@ import { StepperConfig } from '@vfpricing/shared';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent {
-  title = 'intelligentpricing';
   selectedStep = 0;
   @ViewChild('stepperWrapper') stepperWrapper!: ElementRef<HTMLElement>;
   @ViewChild('stepperPanel') stepperPanel!: ElementRef<HTMLElement>;
   
-  stepper: StepperConfig[] = [
-    { label: 'Customer info', step: 0, checked: false },
-    { label: 'Investment & Connections', step: 1, checked: false },
-    { label: 'Configure', step: 2, checked: false },
-    { label: 'Tariff Recommendation', step: 3, checked: false },
-  ];
+  stepper: StepperConfig[] = Stepper_const;
 
   constructor(private render: Renderer2) {}
 
@@ -35,7 +30,7 @@ export class PagesComponent {
   }
 
   @HostListener('window:scroll', ['$event'])
-  scrollHandler(event: Event) {
+  scrollHandler() {
     const top = document.body.getBoundingClientRect().top;
     if (top > -35) {
       this.render.removeClass(this.stepperPanel.nativeElement, 'expanded');

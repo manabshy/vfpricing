@@ -7,7 +7,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { NewConfigureComponent } from './new-configure.component';
 
-describe('NewConfigureComponent', () => {
+fdescribe('NewConfigureComponent', () => {
   let component: NewConfigureComponent;
   let fixture: ComponentFixture<NewConfigureComponent>;
 
@@ -32,5 +32,11 @@ describe('NewConfigureComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should update the avg call value', () => {
+    const value = {region: 'en', avgCall: 3}
+    component.updateValue(value, 4)
+    expect(value.avgCall).toBe(4);
   });
 });
